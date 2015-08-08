@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512.00001 512.00001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="RESTaurant.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="267.82243"
+     inkscape:cy="248.17279"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1362"
+     inkscape:window-height="729"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-540.36216)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:384.70126343px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-45.429867"
+       y="803.42767"
+       id="text3344"
+       sodipodi:linespacing="125%"
+       transform="scale(0.85480942,1.1698514)"><tspan
+         sodipodi:role="line"
+         id="tspan3346"
+         x="-45.429867"
+         y="803.42767"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeMono;-inkscape-font-specification:FreeMono">{ }</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:108.06311035px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="112.53828"
+       y="777.22284"
+       id="text3348"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3350"
+         x="112.53828"
+         y="777.22284"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Century Schoolbook L';-inkscape-font-specification:'Century Schoolbook L Medium'">REST</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:79.15870667px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="112.18288"
+       y="864.6908"
+       id="text3352"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3354"
+         x="112.18288"
+         y="864.6908"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Century Schoolbook L';-inkscape-font-specification:'Century Schoolbook L Medium'">:aurant,</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:STIX;-inkscape-font-specification:STIX;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="115.11678"
+       y="956.47894"
+       id="text3356"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3358"
+         x="115.11678"
+         y="956.47894">EST       :      2015</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12170768px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 184.66601,652.77728 c 0,0 15.22316,-34.45246 20.03049,-45.66954 4.80731,-11.21707 7.61158,-20.03049 12.41891,-26.03963 4.80731,-6.00916 10.41585,-9.21403 16.42499,-8.81343 6.00916,0.40062 16.02441,6.81037 18.82867,8.0122 2.80427,1.20183 6.00915,4.0061 8.81342,3.6055 2.80427,-0.40062 10.81647,-4.0061 14.42195,-6.00916 3.6055,-2.00304 11.21708,-6.40975 17.62684,-6.40975 6.40976,0 13.62074,6.40975 16.02439,11.61768 2.40366,5.20793 10.81647,26.84086 13.62074,32.4494 2.80427,5.60854 14.02135,34.45246 14.02135,34.45246 0,0 -8.81342,4.0061 -22.43416,6.81037 -13.04333,2.68539 -34.85306,5.60853 -34.85306,5.60853 0,0 10.01525,0 28.04269,-2.40366 18.02745,-2.40366 30.04575,-4.40671 41.66344,-9.21403 11.61768,-4.80731 18.82866,-9.61463 23.23537,-7.21098 4.40671,2.40367 4.00609,8.41281 -6.40976,15.62379 -10.41585,7.21098 -57.28721,22.03354 -115.77626,22.83477 -58.48904,0.80121 -97.3482,-14.82257 -103.75795,-21.23232 -6.40976,-6.40977 -8.81343,-12.81953 -6.40976,-14.82257 2.40366,-2.00305 6.40976,-2.40367 11.21707,-1.60244 4.80733,0.80121 28.0427,10.01524 34.85306,11.21707 6.81037,1.20184 35.65428,7.21098 35.65428,7.21098 0,0 -16.8256,-5.20793 -20.8317,-6.00914 -4.00611,-0.80123 -16.42501,-4.0061 -16.42501,-4.0061 z"
+       id="path3407"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssssssssscscssssssssscsc" />
+  </g>
+</svg>
