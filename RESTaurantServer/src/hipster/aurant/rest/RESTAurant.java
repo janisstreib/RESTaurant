@@ -6,13 +6,17 @@ import hipster.aurant.rest.dbobjects.Table;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONArray;
 
 public class RESTAurant extends HttpServlet {
 	private static String indexPage = "";
@@ -117,6 +121,18 @@ public class RESTAurant extends HttpServlet {
 						default:
 							break;
 					}
+				}
+			} else if (pathInfo.startsWith("/tables")) {
+				if (action == RESTAction.GET) {
+					ResultSet res = DatabaseConnection.getInstance()
+							.prepare("SELECT * FROM tables").executeQuery();
+					res.beforeFirst();
+					LinkedList<Object> obj = new LinkedList<Object>();
+					while (res.next()) {
+						obj.add(new Table(res).toJSON());
+					}
+					resp.getWriter().println(new JSONArray(obj));
+					return;
 				}
 			}
 		} catch (NumberFormatException | SQLException e) {
