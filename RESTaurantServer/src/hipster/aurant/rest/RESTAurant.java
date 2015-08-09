@@ -97,7 +97,6 @@ public class RESTAurant extends HttpServlet {
 				}
 
 				// actions on specific booking
-				System.out.println(r);
 				if (r.matches("[0-9]+")) {
 					Booking b = Booking.getById(Long.parseLong(r));
 					if (b == null) {
