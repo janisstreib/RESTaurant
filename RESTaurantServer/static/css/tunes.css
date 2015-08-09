@@ -1,0 +1,204 @@
+body {
+	padding-top: 40px;
+}
+
+.left-better {
+	margin-left: 80px;
+	margin-right: 20px;
+}
+
+.left-better2 {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.doc {
+	color: #000;
+}
+
+.mainheader {
+	text-align: center;
+}
+
+.mainheader img {
+	width: 9em;
+}
+
+header {
+	padding-top: 50px;
+	height: 500px;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.podcast-thumb {
+	width: 130px;
+	float: left;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+.podcast-descr {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.caption h3 {
+	color: #c0c0c0;
+}
+
+.clear-left {
+	clear: left;
+}
+
+.bs-callout {
+	margin: 20px 0;
+	padding: 15px 30px 15px 15px;
+	border-left: 5px solid #eee;
+}
+
+.bs-callout h4 {
+	margin-top: 0;
+}
+
+.bs-callout p:last-child {
+	margin-bottom: 0;
+}
+
+.bs-callout code, .bs-callout .highlight {
+	background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+	background-color: #fcf2f2;
+	border-color: #dFb5b4;
+}
+
+.bs-callout-warning {
+	background-color: #fefbed;
+	border-color: #f1e7bc;
+}
+
+.bs-callout-info {
+	background-color: #f0f7fd;
+	border-color: #d0e3f0;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.bs-docs-masthead {
+	margin-top: 0px;
+}
+
+.bs-docs-masthead, .bs-docs-header {
+	position: relative;
+	padding: 30px 15px;
+	color: #cdbfe3;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	height: 403px;
+	background-image: url('../img/art1.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.bs-docs-masthead h1, .bs-docs-masthead h2 {
+	font-weight: 300;
+	line-height: 1;
+	color: #fff;
+}
+
+.bs-docs-masthead .lead {
+	font-size: 20px;
+	color: #fff;
+}
+
+.img-prev-cover {
+	width: 300px;
+}
+
+.carousel-inner .item img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.carousel-inner .container h1 {
+	color: #fff;
+}
+
+.carousel-caption {
+	font-weight: 400;
+}
+
+#list a.loadeffect {
+	-webkit-animation: moveUp 0.7s ease forwards;
+	-moz-animation: moveUp 0.7s ease forwards;
+	animation: moveUp 0.7s ease forwards;
+}
+
+@
+-webkit-keyframes moveUp {from { -webkit-transform:translateY(200px);
+	
+}
+
+to {
+	-webkit-transform: translateY(0);
+	opacity: 1;
+}
+
+}
+@
+-moz-keyframes moveUp {from { -moz-transform:translateY(200px);
+	
+}
+
+to {
+	-moz-transform: translateY(0);
+	opacity: 1;
+}
+
+}
+@
+keyframes moveUp {from { transform:translateY(200px);
+	
+}
+
+to {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a.btn {
+	margin: 4px;
+}
+
+#currentplaying {
+	font-weight: bold;
+	vertical-align: middle;
+	margin-left: 15px;
+}
+
+.fixedElement {
+	position: fixed;
+	width: 100%;
+	visibility: hidden;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 8px;
+	top: 40px;
+	padding-top: 10px;
+	z-index: 100;
+	background-color: #fff;
+}
+
+.loginbuttons {
+	margin: 3px;
+	clear: both;
+}

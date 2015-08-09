@@ -3,7 +3,9 @@ package hipster.aurant.rest;
 import hipster.aurant.rest.dbobjects.Booking;
 import hipster.aurant.rest.dbobjects.Table;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -13,6 +15,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RESTAurant extends HttpServlet {
+	private static String indexPage = "";
+
+	static {
+		BufferedReader r = new BufferedReader(new InputStreamReader(
+				RESTAurant.class.getResourceAsStream("index.html")));
+		String tmp;
+		try {
+			while ((tmp = r.readLine()) != null) {
+				indexPage += "\n" + tmp;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -47,7 +64,7 @@ public class RESTAurant extends HttpServlet {
 		String pathInfo = req.getPathInfo();
 		try {
 			if (pathInfo.equals("/")) {
-				// fancy page
+				resp.getWriter().print(indexPage);
 				return;
 			}
 
