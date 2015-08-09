@@ -91,17 +91,24 @@ public class RESTAurant extends HttpServlet {
 					}
 					Booking b = new Booking(req.getParameter("name"), begin,
 							table, end);
-					resp.getWriter().println(b.toJSON());
 					resp.setStatus(201);
+					resp.getWriter().println(b.toJSON());
 					return;
 				}
 
 				// actions on specific booking
-				if (r.matches("[0-9]")) {
+				System.out.println(r);
+				if (r.matches("[0-9]+")) {
 					switch (action) {
 						case GET:
-
-							break;
+							Booking b = Booking.getById(Long.parseLong(r));
+							if (b == null) {
+								resp.sendError(404);
+								return;
+							} else {
+								resp.getWriter().println(b.toJSON());
+								return;
+							}
 						case POST:
 
 							break;
