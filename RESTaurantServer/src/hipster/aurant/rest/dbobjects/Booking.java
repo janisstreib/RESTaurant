@@ -99,4 +99,11 @@ public class Booking {
 		return new JSONObject(map);
 	}
 
+	public void cancel() throws SQLException {
+		PreparedStatement prep = DatabaseConnection.getInstance().prepare(
+				"DELETE FROM bookings WHERE id=?");
+		prep.setLong(1, id);
+		prep.execute();
+	}
+
 }

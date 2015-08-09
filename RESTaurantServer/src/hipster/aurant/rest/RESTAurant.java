@@ -99,22 +99,21 @@ public class RESTAurant extends HttpServlet {
 				// actions on specific booking
 				System.out.println(r);
 				if (r.matches("[0-9]+")) {
+					Booking b = Booking.getById(Long.parseLong(r));
+					if (b == null) {
+						resp.sendError(404);
+						return;
+					}
 					switch (action) {
 						case GET:
-							Booking b = Booking.getById(Long.parseLong(r));
-							if (b == null) {
-								resp.sendError(404);
-								return;
-							} else {
-								resp.getWriter().println(b.toJSON());
-								return;
-							}
+							resp.getWriter().println(b.toJSON());
+							return;
 						case POST:
 
 							break;
 						case DELETE:
-
-							break;
+							b.cancel();
+							return;
 
 						default:
 							break;
