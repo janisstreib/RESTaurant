@@ -51,9 +51,9 @@ public class Booking {
 
 	public Booking(ResultSet r) throws SQLException {
 		this.name = r.getString("name");
-		this.begin = new Date(r.getLong("begin"));
-		this.end = new Date(r.getLong("end"));
-		this.id = r.getInt("id");
+		this.begin = new Date(r.getLong("timeBegin"));
+		this.end = new Date(r.getLong("timeEnd"));
+		this.id = r.getLong("id");
 		this.table = Table.getById(r.getInt("table"));
 	}
 
