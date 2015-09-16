@@ -4,8 +4,11 @@ import hipster.aurant.rest.dbobjects.Booking;
 import hipster.aurant.rest.dbobjects.Table;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -20,18 +23,12 @@ import org.json.JSONArray;
 
 public class RESTAurant extends HttpServlet {
 	private static String indexPage = "";
+	private static URL indexPageUrl = RESTAurant.class
+			.getResource("index.html");
+	private static long lastLoaded;
 
 	static {
-		BufferedReader r = new BufferedReader(new InputStreamReader(
-				RESTAurant.class.getResourceAsStream("index.html")));
-		String tmp;
-		try {
-			while ((tmp = r.readLine()) != null) {
-				indexPage += "\n" + tmp;
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	@Override
@@ -68,6 +65,9 @@ public class RESTAurant extends HttpServlet {
 		String pathInfo = req.getPathInfo();
 		try {
 			if (pathInfo.equals("/")) {
+				if (new File(indexPageUrl.toURI()).lastModified() > lastLoaded) {
+					loadIndex();
+				}
 				resp.getWriter().print(indexPage);
 				return;
 			}
@@ -135,10 +135,28 @@ public class RESTAurant extends HttpServlet {
 					return;
 				}
 			}
-		} catch (NumberFormatException | SQLException e) {
+		} catch (NumberFormatException | SQLException | URISyntaxException e) {
 			e.printStackTrace();
 			resp.sendError(500);
 		}
 		resp.sendError(404);
+	}
+
+	private static void loadIndex() throws IOException {
+		BufferedReader r = new BufferedReader(new InputStreamReader(
+				indexPageUrl.openStream()));
+		String tmp;
+		synchronized (indexPage) {
+			indexPage = "";
+			try {
+				while ((tmp = r.readLine()) != null) {
+					indexPage += "\n" + tmp;
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			lastLoaded = System.currentTimeMillis();
+			System.out.println("Reloaded index.");
+		}
 	}
 }
