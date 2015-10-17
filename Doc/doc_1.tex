@@ -1,0 +1,77 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{forloop}
+\usepackage{amsmath,amsfonts,amssymb}
+\useoutertheme {smoothbars}
+
+\defbeamertemplate*{footline}{smoothbars theme}
+{%
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+		leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+		\leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
+		\hfill%
+		{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor}%
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+	\end{beamercolorbox}
+}
+
+\begin{document}
+
+\title{RESTaurant for Android: Programmierung einer Sitzplatzreservierung \\ Teil I}   
+\author{Janis Streib} 
+\date{02.-06.11.2015} 
+
+\frame{\titlepage} 
+
+\frame{\frametitle{Inhalt}\tableofcontents} 
+
+
+\section{Teil I: IDE einrichten} 
+\subsection{JDK installieren}
+\frame{\frametitle{JDK installieren}
+ \begin{itemize}
+ 	\item Java Development Kit (JDK), der Compiler und Java Systembibliotheken enthält (aktuell: JDK8): \\
+ 	\url{https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}
+\end{itemize}
+}
+\subsection{Android Studio installieren}
+\frame{\frametitle{Android Studio installieren}
+	\begin{itemize}
+		\item Zur gestaltung der späteren Benutzeroberfläche der App benötigen wir die offizielle Android-Entwicklungsumgebung
+		\item Android Studio basiert auf der populären IDE IntelliJ
+		\item Android Studio: \\
+		\url{https://developer.android.com/sdk/index.html}
+	\end{itemize}
+}
+\newcounter{ct}
+\forloop{ct}{1}{\value{ct} < 9}%
+{%
+	\frame{\frametitle{Android Studio einrichten}		
+			\includegraphics[width=116mm]{img/inst\arabic{ct}}	
+	}
+}
+
+\subsection{NetBeans IDE installieren}
+\frame{\frametitle{NetBeans IDE installieren}
+	\begin{itemize}
+		\item NetBeans IDE (for Java SE): \\
+		\url{https://netbeans.org/}
+		\item NBAndroid plugin zur Androidentwicklung in NetBeans: \\
+		\url{https://bitbucket.org/nbandroid/nbandroid/wiki/Installation}
+		\item NetBeans Updatesite:
+		\url{http://nbandroid.org/updates/updates.xml}
+	\end{itemize}
+}
+
+\forloop{ct}{1}{\value{ct} < 11}%
+{%
+\frame{\frametitle{NetBeans IDE einrichten}		
+		\includegraphics[width=116mm]{img/net\arabic{ct}}
+}
+}
+\end{document}
+
