@@ -44,13 +44,17 @@
 \begin{document}
 
 \title{RESTaurant for Android: Programmierung einer Sitzplatzreservierung \\ Teil II}   
-\author{Janis Streib} 
+\author{Janis Streib \\ CC-BY-SA} 
 \date{02.-06.11.2015} 
 
 \frame{\titlepage} 
 
 \frame{\frametitle{Inhalt}\tableofcontents} 
 
+%\lstinputlisting{filename.java}
+%\begin{lstlisting}
+% Add code here
+%\end{lstlisting}
 
 \section{Teil II: Java in a Nutshell}
 \frame{\frametitle{Java in a Nutshell}		
@@ -59,19 +63,72 @@
 		\item Variablen
 		\item Methoden
 		\item Klassen
-		\item $\Rightarrow$ Objektorientierung, Vererbung (!)
+		\item $\Rightarrow$ Objektorientierung, Vererbung
 		\item Kontrollstrukturen
 		\item I/O (Eingabe/Ausgabe)/ Streams
 	\end{itemize}
 }
-%\lstinputlisting{filename.java}
-%\begin{lstlisting}
-% Add code here
-%\end{lstlisting}
-\section{Teil III: Hallo Welt!}
-\section{Teil IV: Android UI-Design}
-\section{Teil V: Das RESTAurant}
-\section{Optional: Teil VI: Android Design Guidelines}
-\section{Optional: Teil VII: Versionskontrolle}
+
+\subsection{Kleine Aufgaben zum warm werden}
+\frame{\frametitle{Finde den Fehler!}		
+	\lstinputlisting{samples/Sample1.java}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\begin{itemize}
+		\item Kompiliert es? \pause
+		\item $\Rightarrow$ \textcolor{red}{Nein}\pause
+		\item Wie kann man es reparieren? \pause
+		\item 'Hallo Welt!' ist ein String und muss deshalb in " "
+		
+	\end{itemize}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\lstinputlisting{samples/Sample2.java}
+}
+\frame{\frametitle{Finde den Fehler!}		
+	\begin{itemize}
+		\item Kompiliert es? \pause
+		\item $\Rightarrow$ \textcolor{green}{Ja}\pause
+		\item Was ist die Ausgabe?\pause
+		\item {\tt Error: Could not find or load main class Sample2} \pause
+		\item Wie kann man es reparieren? \pause
+		\item Die main-Methode muss immer statisch sein $\Rightarrow$ Codewort 'static'
+		
+	\end{itemize}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\lstinputlisting{samples/Greeter.java}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\begin{itemize}
+		\item Kompiliert es? \pause
+		\item $\Rightarrow$ \textcolor{red}{Nein}\pause
+		\item Wie kann man es reparieren? \pause
+		\item Eine neue Instanzvariable 'message' vom Typ String anlegen und im Konstruktor zuweisen.
+		
+	\end{itemize}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\lstinputlisting{samples/Greeter2.java}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\begin{itemize}
+		\item Kompiliert es? \pause
+		\item $\Rightarrow$ \textcolor{green}{Ja}\pause
+		\item Was ist die Ausgabe?\pause
+		\item {\tt null} \pause
+		\item Wie kann man es reparieren? \pause
+		\item Den Konstruktorparameter der Instanzvariable zuweisen (Codewort 'this', um auf die Instanz zuzugreifen anstatt der lokalen Variable)	
+	\end{itemize}
+}
+
+\subsection{}
+% ???
 \end{document}
 
