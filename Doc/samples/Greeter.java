@@ -4,7 +4,7 @@ public class Greeter {
 		sample.greet();
 	}
 	
-	public Greeter(String messgae) {
+	public Greeter(String message) {
 	}
 	
 	private void greet() {
