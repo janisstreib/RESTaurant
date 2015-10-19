@@ -55,8 +55,16 @@
 %\begin{lstlisting}
 % Add code here
 %\end{lstlisting}
+\section{Exkurs: XML}
+\subsection{XML}
+\frame{\frametitle{Exkurs: XML}
+	\begin{itemize}
+		\item XML := Extensible Markup Language
+		\item Erweiterbare Auszeichnungssprache zur Auszeichnung hierarchischer Strukturen
+	\end{itemize}
+}
 
-\section{Android UI}
+\section{UI}
 \subsection{Übersicht}
 \frame{\frametitle{Das Android UI}
 	\begin{columns}
@@ -67,7 +75,10 @@
 				\item \emph{Statusbar}
 				\item \emph{Toast}
 			\end{enumerate}
-			Das ganze "Fenster", wie es hier Vorliegt: \\ \emph{Activity}
+			Das ganze "Fenster" (mitsamt Logik dahinter), wie es hier Vorliegt: \\ \emph{Activity}
+				\begin{itemize}
+					\item Beschriebung erfolgt in XML-Dateien
+				\end{itemize}
 		\end{column}
 		
 		\begin{column}{.38\textwidth}
@@ -79,32 +90,39 @@
 	\end{columns}
 }
 
-\subsection{Repräsentation}
-\frame{\frametitle{Die Repräsentation des Android UIs}
+\subsection{Beschreibung}
+\frame{\frametitle{Die Beschreibung des Android UIs}
 	\begin{columns}
-		\begin{column}{.62\textwidth}
-			\begin{enumerate}
-				\item \emph{Actionbar}
-				\item \emph{Optionmenu}
-				\item \emph{Statusbar}
-				\item \emph{Toast}
-			\end{enumerate}
-			Das ganze "Fenster", wie es hier Vorliegt: \\ \emph{Activity}
+		\begin{column}{.67\textwidth}
+				\tiny {\lstinputlisting{samples/ui2.xml}}
 		\end{column}
 		
-		\begin{column}{.38\textwidth}
-			%	\begin{picture}(2,2)
-			\includegraphics[width=36mm]{img/ui}
-			%	\end{picture}
-			%\includegraphics[\textwidth]{fig}
+		\begin{column}{.33\textwidth}
+			\includegraphics[width=36mm]{img/ui2}
 		\end{column}
 	\end{columns}
 }
-
-\section{UI-Gestaltung in Android Studio}
-\section{UI -> Code}
-\section{Ein erster Taschenrechner}
+\frame{\frametitle{Die Beschreibung des Android UIs}
+	\begin{columns}
+		\begin{column}{.67\textwidth}
+			\tiny {\lstinputlisting{samples/ui3.xml}}
+		\end{column}
+		
+		\begin{column}{.33\textwidth}
+			\includegraphics[width=36mm]{img/ui3}
+		\end{column}
+	\end{columns}
+}
+\section{UI-Gestaltung}
+\section{UI $\rightarrow$ Code}
+\section{Taschenrechner}
 \section{Zustandshaltung}
+\section{Android Documentaion}
+\frame{\frametitle{Android Documentation}
+	\begin{itemize}
+		\item Aktuelle Guidelines, Tutorials, Dokumentation: \\ \url{https://developer.android.com}
+	\end{itemize}
+}
 %\section{Teil IV: Android UI-Design}
 %\section{Teil V: Das RESTAurant}
 %\section{Optional: Teil VI: Android Design Guidelines}
