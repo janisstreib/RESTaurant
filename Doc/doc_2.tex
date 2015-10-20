@@ -65,6 +65,7 @@
 		\item $\Rightarrow$ Objektorientierung, Vererbung
 		\item Kontrollstrukturen
 		\item I/O (Eingabe/Ausgabe)/ Streams
+		\item Exceptionhandling
 	\end{itemize}
 }
 
@@ -127,7 +128,55 @@
 		\item Den Konstruktorparameter der Instanzvariable zuweisen (Codewort 'this', um auf die Instanz zuzugreifen anstatt der lokalen Variable)	
 	\end{itemize}
 }
-
+\subsection{Modellieren}
+\frame{\frametitle{Modellieren}		
+	Modellieren Sie in Java: \\
+	Ein \emph{Zug} ist entweder ein \emph{Personenzug} oder ein \emph{Güterzug}. Ein Zug hat genau eine \emph{Lokomotive}. Eine Lokomotive ist entweder ein \emph{elektrischer Treibwagen} oder ein \emph{Dieseltriebwagen}. Ein Zug hat beliebig viele \emph{Wagons}. Dabei kann ein Personenzug aus \emph{Personenwagons} und \emph{Speisewagons} bestehen, ein Güterzug aus \emph{Containerwagons} und \emph{Gefahrgutwagons}.
+}
+\frame{\frametitle{Modellieren}		
+	Welche Objekte ($\Leftrightarrow$ Klassen) sind \emph{abstrakt}? \pause
+	\begin{itemize}
+		\item Zug \pause
+		\item Lokomotive \pause
+		\item Wagon \pause
+		\begin{itemize}
+			\item Personenwagon
+			\item Güterwagon
+		\end{itemize}
+	\end{itemize}
+}
+\frame{\frametitle{Modellieren}		
+	Welche Objekte ($\Leftrightarrow$ Klassen) sind \textcolor{green}{\emph{konkret}}? \pause
+	\begin{itemize}
+		\item Zug
+		\begin{itemize}
+			\item \textcolor{green}{Personenzug}
+			\item \textcolor{green}{Güterzug}
+		\end{itemize} \pause
+		\item Lokomotive
+		\begin{itemize}
+			\item \textcolor{green}{Dieseltriebwagen}
+			\item \textcolor{green}{Elektrischer Treibwagen}
+		\end{itemize}
+		\item Wagon
+		\begin{itemize}
+			\item Personenwagon  \pause
+			\begin{itemize}
+				\item \textcolor{green}{Speisewagon}
+				\item \textcolor{green}{Personenwagon}
+			\end{itemize}
+			\item Güterwagon \pause
+			\begin{itemize}
+				\item \textcolor{green}{Containerwagon}
+				\item \textcolor{green}{Gefahrgutwagon} 
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+}
+\frame{\frametitle{Implementieren!}
+	\pause
+}
+\section{Exeptions}
 \section{}
 % ???
 \end{document}
