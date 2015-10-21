@@ -12,7 +12,6 @@
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
 \definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
 \definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
-
 \lstset{language=Java,
 	basicstyle=\ttfamily,
 	keywordstyle=\color{javapurple}\bfseries,
@@ -128,10 +127,11 @@
 		\item Den Konstruktorparameter der Instanzvariable zuweisen (Codewort 'this', um auf die Instanz zuzugreifen anstatt der lokalen Variable)	
 	\end{itemize}
 }
-\subsection{Modellieren}
+\section{Objectorientierung}
+\subsection{Modellierung}
 \frame{\frametitle{Modellieren}		
 	Modellieren Sie in Java: \\
-	Ein \emph{Zug} ist entweder ein \emph{Personenzug} oder ein \emph{Güterzug}. Ein Zug hat genau eine \emph{Lokomotive}. Eine Lokomotive ist entweder ein \emph{elektrischer Treibwagen} oder ein \emph{Dieseltriebwagen}. Ein Zug hat beliebig viele \emph{Wagons}. Dabei kann ein Personenzug aus \emph{Personenwagons} und \emph{Speisewagons} bestehen, ein Güterzug aus \emph{Containerwagons} und \emph{Gefahrgutwagons}.
+	Ein \emph{Zug} ist entweder ein \emph{Personenzug} oder ein \emph{Güterzug}. Ein Zug hat genau eine \emph{Lokomotive}. Eine Lokomotive ist entweder ein \emph{elektrischer Triebwagen} oder ein \emph{Dieseltriebwagen}. Alle Lokomotiven können abhängig von ihrer Art eine \emph{Notbremsung} vollziehen. Ein Zug hat beliebig viele \emph{Wagons}. Dabei kann ein Personenzug aus \emph{Personenwagons} und \emph{Speisewagons} bestehen, ein Güterzug aus \emph{Containerwagons} und \emph{Gefahrgutwagons}. Alle genannten Bestandteile eines Zuges können \emph{gereinigt} werden (Wagons und Lokomotiven sind also \emph{"reinigbar"}).
 }
 \frame{\frametitle{Modellieren}		
 	Welche Objekte ($\Leftrightarrow$ Klassen) sind \emph{abstrakt}? \pause
@@ -140,7 +140,7 @@
 		\item Lokomotive \pause
 		\item Wagon \pause
 		\begin{itemize}
-			\item Personenwagon
+			\item Passagierwagen
 			\item Güterwagon
 		\end{itemize}
 	\end{itemize}
@@ -156,11 +156,11 @@
 		\item Lokomotive
 		\begin{itemize}
 			\item \textcolor{green}{Dieseltriebwagen}
-			\item \textcolor{green}{Elektrischer Treibwagen}
+			\item \textcolor{green}{Elektrischer Triebwagen}
 		\end{itemize}
 		\item Wagon
 		\begin{itemize}
-			\item Personenwagon  \pause
+			\item Passagierwgaon  \pause
 			\begin{itemize}
 				\item \textcolor{green}{Speisewagon}
 				\item \textcolor{green}{Personenwagon}
@@ -175,7 +175,48 @@
 }
 \frame{\frametitle{Implementieren!}
 	\pause
+	\tiny{
+		\lstinputlisting[caption=Cleanable.java]{samples/Cleanable.java}
+		 \lstinputlisting[caption=Locomotive.java]{samples/Locomotive.java}
+		}
 }
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+		\lstinputlisting[caption=Bogie.java]{samples/Bogie.java}
+		\lstinputlisting[caption=CargoBogie.java]{samples/CargoBogie.java}
+		\lstinputlisting[caption=PassengerBogie.java]{samples/PassengerBogie.java}
+	}
+}
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+		\lstinputlisting[caption=ElectricLocomotive.java]{samples/ElectricLocomotive.java}
+	}
+}
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+		\lstinputlisting[caption=DieselLocomotive.java]{samples/DieselLocomotive.java}
+	}
+}
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+	\lstinputlisting[caption=Train.java]{samples/Train.java}
+	}
+}
+
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+		\lstinputlisting[caption=CargoTrain.java]{samples/CargoTrain.java}
+		\lstinputlisting[caption=PassengerTrain.java]{samples/PassengerTrain.java}
+	}
+}
+
+\frame{\frametitle{Implementieren!}
+	\tiny{ 
+		\lstinputlisting[caption=PersonBogie.java]{samples/PersonBogie.java}
+		\lstinputlisting[caption=DiningBogie.java]{samples/DiningBogie.java}
+	}
+}
+
 \section{Exeptions}
 \section{}
 % ???
