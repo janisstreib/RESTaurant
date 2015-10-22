@@ -23,11 +23,10 @@
 			#REST.
 		</h1>
 	</header>
-	<hr>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="../js/jquery.min.js"></script>
+	<script src="/static/js/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -40,17 +39,77 @@
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav">
-					<li><a href="#general">General</a></li>
-					<li><a href="#contribution">Contribution</a></li>
-					<li><a href="#list">List</a></li>
-					<li><a href="#reporting">Reporting</a></li>
+					<li><a href="#create">Create</a></li>
+					<li><a href="#cancel">Cancel</a></li>
+					<li><a href="#get">Get</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+	<div class="container">
+		<h2 id="create">Create a booking</h2>
+		<p>
+			Create a new Booking using a HTTP-PUT request on
+			<code>/booking/</code>
+			.
+		<p />
+		<h3>Parameter</h3>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Importance</th>
+					<th>Function</th>
+				</tr>
+				<tr>
+					<td><code>begin=&lt;time&gt;</code></td>
+					<td>Required, begin &lt; end</td>
+					<td>A <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX-Timestamp</a>
+						representing the start time of the wished booking.
+					</td>
+				</tr>
+				<tr>
+					<td><code>end=&lt;time&gt;</code></td>
+					<td>Required, end &gt; begin</td>
+					<td>A <a href="https://en.wikipedia.org/wiki/Unix_time">UNIX-Timestamp</a>
+						representing the end time of the wished booking.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2 id="cancel">Cancel a booking</h2>
+		<p>
+			Cancel a new Booking using a HTTP-DELETE request on
+			<code>/booking/</code>
+			.
+		<p />
+		<h3>Parameter</h3>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Importance</th>
+					<th>Function</th>
+				</tr>
+				<tr>
+					<td><code>id=&lt;id&gt;</code></td>
+					<td>Required</td>
+					<td>The id of the booking
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2 id="get">Get a Booking</h2>
+		<p>
+			Get booking informations using a HTTP-GET request on
+			<code>/booking/</code>
+			.
+		<p />
+		<h3>Parameter</h3>
+	</div>
 	<br>
 	<hr>
-	<span class="pull-right"> &copy; <?=$year?> Yellowant<br> <br>
+	<span class="pull-right"> &copy; Yellowant<br> <br>
 	</span>
 </body>
 </html>
