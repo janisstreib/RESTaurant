@@ -4,7 +4,7 @@
 \usepackage{forloop}
 \usepackage{amsmath,amsfonts,amssymb}
 \useoutertheme {smoothbars}
-
+\usepackage{verbatim}
 \usepackage{listings}
 \usepackage{color}
 \definecolor{name}{rgb}{0.5,0.5,0.5}
@@ -67,6 +67,8 @@
 }
 \subsection{JSON}
 \frame{\frametitle{JSON}
+	\begin{columns}
+		\begin{column}{0.727\textwidth}
 	\begin{itemize}
 		\item JSON := JavaScript Object Notation
 		\item Einfach lesbares Textformat
@@ -74,8 +76,18 @@
 		\item Object: \\ {\tt \{\\\hspace{1ex}	"EventType": "Workshop",\\\hspace{1ex}	"Teacher": "Janis Streib",\\\hspace{1ex} "Participants": 5\\\}}
 		\item In Java: org.json-Library\\\url{http://www.json.org/java/index.html}
 	\end{itemize}
+\end{column}
+\begin{column}{0.373\textwidth}
+	\pause
+	\includegraphics[width=40mm]{img/REST}
+\end{column}
+\end{columns}
 }
-
+\subsection{HTTP}
+\frame{\frametitle{HTTP}
+	Beispiel eines HTTP-GET-Requestes an einen Webserver auf www.dogcraft.de:
+	{\tiny \verbatiminput{samples/http.txt}}
+}
 %\section{Teil V: Das RESTAurant}
 %\section{Optional: Teil VI: Android Design Guidelines}
 %\section{Optional: Teil VII: Versionskontrolle}
