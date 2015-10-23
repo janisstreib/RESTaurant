@@ -88,6 +88,26 @@
 	Beispiel eines HTTP-GET-Requestes an einen Webserver auf www.dogcraft.de:
 	{\tiny \verbatiminput{samples/http.txt}}
 }
+\frame{\frametitle{Request-Methoden}
+	Mögliche Request-methoden:
+	\begin{itemize}
+		\item GET (siehe oben)- Zur Abfrage von Daten
+		\item POST - Zum Übermitteln von Daten
+		\item PUT - Zum Anlegen eines neuen Datums
+		\item DELETE - Zum Löschen eines Datums
+	\end{itemize}
+}
+\frame{\frametitle{Antworten}
+	Webserver antworten mit einem Statuscode, der den Erfolg des Requests widerspiegelt. Z.B.: 
+	\begin{itemize}
+		\item 404 - Not found
+		\item 200 - OK
+		\item 400 - Bad request
+		\item 500 - Internal server error
+		\item 201 - Created
+	\end{itemize}
+	Viele weitere Statuscodes:\\ \url{https://de.wikipedia.org/wiki/HTTP-Statuscode\#Liste_der_HTTP-Statuscodes}
+}
 %\section{Teil V: Das RESTAurant}
 %\section{Optional: Teil VI: Android Design Guidelines}
 %\section{Optional: Teil VII: Versionskontrolle}
