@@ -97,6 +97,7 @@
 		\item DELETE - Zum Löschen eines Datums
 	\end{itemize}
 }
+
 \frame{\frametitle{Antworten}
 	Webserver antworten mit einem Statuscode, der den Erfolg des Requests widerspiegelt. Z.B.: 
 	\begin{itemize}
@@ -108,6 +109,65 @@
 	\end{itemize}
 	Viele weitere Statuscodes:\\ \url{https://de.wikipedia.org/wiki/HTTP-Statuscode\#Liste_der_HTTP-Statuscodes}
 }
+\section{Die API}
+\frame{\frametitle{Die RESTaurant API}
+	\begin{itemize}
+		\item HTTP-Requests an einen Webserver
+		\item Server kooridniert Reservierungen
+		\item Antwortet mit dem HTTP-Statuscode {\tt 400} bei einem ungültigen, unmöglichen oder fehlerhaften Request
+		\item Antwortet mit dem HTTP-Statuscode {\tt 200} bei einem gültigen Request, sofern nicht anders spezifiziert.
+		\item Antwortet mit dem HTTP-Statuscode {\tt 404} bei nicht gefundener Reservierungsreferenz.
+	\end{itemize}
+}
+\subsection{API-Objekte}
+\frame{\frametitle{Booking}
+	\begin{itemize}
+		\item Jede Reservierung erhält eine eindeutige ID
+		\item Booking:\\ {\tt \{"name":"Kurti", "end":1445798161, "id":8779481398776661660, "begin":1445797161, "table":\{"atWindow":false, "id":1, "seats":12\}\}}
+	\end{itemize}
+}
+\frame{\frametitle{Tables}
+	\begin{itemize}
+		\item Jeder Tisch hat eine Plaztzanzahl und die Information, ob er sich am Fenster befindet
+		\item Tables:\\ {\tt [{"atWindow":false, "id":1, "seats":12}, {"atWindow":true, "id":2, "seats":2}, {"atWindow":true, "id":3, "seats":2}, {"atWindow":false, "id":4, "seats":4}, {"atWindow":true, "id":5, "seats":4}, {"atWindow":false, "id":6, "seats":4}]
+			}
+	\end{itemize}
+}
+\subsection{Neue Reservierung}
+\frame{\frametitle{Eine neue Reservierung anlegen}
+	HTTP-PUT-Request an {\tt /booking/} \\\vspace{.4cm}
+	\begin{tabular}{ c | p{3.5cm} | p{3.7cm} }
+		Parameter & Bedingungen & Funktion \\
+		\hline
+		begin=\{time\} & muss $<$ der Endzeit sein & Ein UNIX-Timestamp mit dem Start der Reservierung \\
+		\hline
+		end=\{time\} & muss $>$ der Endzeit sein & Ein UNIX-Timestamp mit dem Ende der Reservierung \\
+		\hline
+		name=\{name\} & & Der Name, auf den die Reservierung gebucht werden soll \\
+		\hline
+		table=\{table id\} & & Der zu reserveriernede Tisch 
+	\end{tabular}
+}
+\frame{\frametitle{Eine neue Reservierung anlegen - Statuscodes und Antowrt}
+\begin{itemize}
+	\item Statuscode bei erfolgreichem Anlegen: {\tt 201}
+	\begin{itemize}
+			\item Antwort: Die angelegte Buchung als JS-Objekt
+	\end{itemize}
+	\item Statuscode bei bereits reservierten Tisch: {\tt 409}
+\end{itemize}
+}
+
+\subsection{Reservierung Stornieren}
+\frame{\frametitle{Eine Reservierung stornieren}
+	HTTP-DELETE-Request an {\tt /booking/\{booking-id\}} \\\vspace{.4cm}
+	Statuscodes:
+	\begin{itemize}
+		\item Statuscode bei erfolgreichem Stornieren: {\tt 200}
+	\end{itemize}
+}
+
+
 %\section{Teil V: Das RESTAurant}
 %\section{Optional: Teil VI: Android Design Guidelines}
 %\section{Optional: Teil VII: Versionskontrolle}
