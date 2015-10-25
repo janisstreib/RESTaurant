@@ -59,7 +59,7 @@
 \subsection{REST}
 \frame{\frametitle{REST}
 	\begin{itemize}
-		\item Der RESTaurant-Server bietet zur Kommunikatoin mit der App ein REST-API über http an
+		\item Der RESTaurant-Server bietet zur Kommunikatoin mit der App ein REST-API über HTTP an
 		\item API := Application Programming Interface
 		\item REST (oder ReST) := Representational State Transfer
 		\item "REST fordert, dass eine URI (Adresse) genau einen Seiteninhalt repräsentiert, und dass ein Web-/REST-Server auf mehrfache Anfragen mit demselben URI auch mit demselben Webseiteninhalt antwortet." - \url{https://de.wikipedia.org/wiki/Representational_State_Transfer}
@@ -128,8 +128,8 @@
 }
 \frame{\frametitle{Tables}
 	\begin{itemize}
-		\item Jeder Tisch hat eine Plaztzanzahl und die Information, ob er sich am Fenster befindet
-		\item Tables:\\ {\tt [{"atWindow":false, "id":1, "seats":12}, {"atWindow":true, "id":2, "seats":2}, {"atWindow":true, "id":3, "seats":2}, {"atWindow":false, "id":4, "seats":4}, {"atWindow":true, "id":5, "seats":4}, {"atWindow":false, "id":6, "seats":4}]
+		\item Jeder Tisch hat eine ID, eine Plaztzanzahl und die Information, ob er sich am Fenster befindet
+		\item Tables:\\ {\tt [\{"atWindow":false, "id":1, "seats":12\}, \{"atWindow":true, "id":2, "seats":2\}, \{"atWindow":true, "id":3, "seats":2\}, \{"atWindow":false, "id":4, "seats":4\}, \{"atWindow":true, "id":5, "seats":4\}, \{"atWindow":false, "id":6, "seats":4\}]
 			}
 	\end{itemize}
 }
@@ -158,14 +158,24 @@
 \end{itemize}
 }
 
-\subsection{Reservierung Stornieren}
+\subsection{Reservierung stornieren}
 \frame{\frametitle{Eine Reservierung stornieren}
 	HTTP-DELETE-Request an {\tt /booking/\{booking-id\}} \\\vspace{.4cm}
-	Statuscodes:
-	\begin{itemize}
-		\item Statuscode bei erfolgreichem Stornieren: {\tt 200}
-	\end{itemize}
 }
+
+\subsection{Reservierung abfragen}
+\frame{\frametitle{Eine Reservierung abfragen}
+	HTTP-GET-Request an {\tt /booking/\{booking-id\}} \\\vspace{.4cm}
+	Antwort:\\Das angefragte Booking-Objekt
+}
+
+\subsection{Reservierung aktualisieren}
+\frame{\frametitle{Eine Reservierung aktualisieren}
+	HTTP-POST-Request an {\tt /booking/\{booking-id\}} \\\vspace{.4cm}
+	Parameter und Statuscodes wie bei einer \hyperlink{page.12}{neuen Reservierung}.
+	Antwort:\\Das aktualisierte Booking-Objekt
+}
+
 
 
 %\section{Teil V: Das RESTAurant}
