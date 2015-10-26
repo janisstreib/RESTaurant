@@ -80,7 +80,21 @@
 	\end{columns}
 }
 \section{UI-Gestaltung}
+\forloop{ct}{1}{\value{ct} < 9}%
+{%
+	\frame{\frametitle{Ein esrtes UI gestalten}		
+		\includegraphics[width=116mm]{img/new\arabic{ct}}
+	}
+}
 \section{UI zu Code}
+\frame{\frametitle{Vom UI zum Code}
+	\begin{itemize}
+		\item Jedes UI-Element in Android ist von der Grundklasse ein {\tt View}
+		\item Alle UI-Elemente, denen im XML-File eine Id ({\tt android:id=""}) gegeben wurden, werden in Java von der IDE in die Klasse {\tt R} abgebildet
+		\item Im Code können die Views dann über {\tt findViewById(R.id.\{viewId\})} referenziert werden
+		\item Referenzierung als Button, TextView, usw. der Views im Code durch Casts 
+	\end{itemize}
+}
 \section{Zinsrechner}
 \frame{\frametitle{Mini-Projekt: Zinsrechner}
 	Designen und Bauen Sie einen kleinen Zinsrechner, bei dem der Benutzer ein Startkapital und einen Zinssatz angeben kann und sein Endkapital zurückgeliefert bekommt.
