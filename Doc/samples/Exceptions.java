@@ -9,7 +9,7 @@ public class Exceptions {
 	}
 
 	public void test2(String hallo) throws Exception {
-		if (hallo != "hallo") {
+		if (!"hallo".equals(hallo)) {
 			throw new Exception("The String MUST be \"hallo\"!");
 		}
 	}
