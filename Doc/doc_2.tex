@@ -277,6 +277,9 @@
 }
 \frame{\frametitle{Benutzung von Streams}
 	\begin{itemize}
+		\item InputStreams lesen die einzelnen, "rohen" bytes
+		\item Reader lesen und dekodieren character (einzelne Zeichen)
+		\item BufferedReader puffern ganze Zeichenketten (String) bis zum nächsten new line ({\tt .readLine()})
 		\item Angenehmer weg zum Schreiben: z.B. der {\tt BufferedWriter} (nimmt einen {\tt Writer} entgegen, der einen beliebigen {\tt OutputStream} entgegen nimmt)
 		\item Analog zum Lesen: z.B. der {\tt BufferedReader} (nimmt einen {\tt Reader} entgegen, der einen beliebigen {\tt InputStream} entgegen nimmt)
 	\end{itemize}
@@ -294,8 +297,8 @@
 	\small {
 		\begin{enumerate}
 			\item Autovervollständigung benutzen! \\
-			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschnleunigt die Arbeit massiv und importiert dabei automatisch die benötigeten Pakete.
-			\item IDEs wissen meißtens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und Anwenden.
+			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschleunigt die Arbeit massiv und importiert dabei automatisch die benötigeten Pakete.
+			\item IDEs wissen meißtens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und anwenden.
 			\item Häufig speichern! \\ Speichern Sie häufig. Bei einem möglichen Absturtz oder einer Unachtsamkeit sind Sie dann eher auf der sicheren Seite.
 			\item Häufig testen (iteratives Programmieren)! \\ Häufiges Testen/Ausführen Ihres Codes erhöht die stabilität und funktionalität und hilft außerdem dabei, schnell die Funktionalität Ihrer Algorithmen zu bestätigen.
 		\end{enumerate}
