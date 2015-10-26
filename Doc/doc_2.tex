@@ -6,44 +6,12 @@
 \useoutertheme {smoothbars}
 
 \usepackage{listings}
-\usepackage{color}
-\definecolor{name}{rgb}{0.5,0.5,0.5}
-\definecolor{javared}{rgb}{0.6,0,0} % for strings
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
-\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
-\lstset{language=Java,
-	basicstyle=\ttfamily,
-	keywordstyle=\color{javapurple}\bfseries,
-	stringstyle=\color{javared},
-	commentstyle=\color{javagreen},
-	morecomment=[s][\color{javadocblue}]{/**}{*/},
-	numbers=left,
-	numberstyle=\tiny\color{black},
-	stepnumber=2,
-	numbersep=10pt,
-	tabsize=4,
-	showspaces=false,
-	showstringspaces=false}
 
-\defbeamertemplate*{footline}{smoothbars theme}
-{%
-	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-		leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-		\leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
-		\hfill%
-		{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor}%
-	\end{beamercolorbox}%
-	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
-	\end{beamercolorbox}
-}
+\input{cc-templ.tex}
 
 \begin{document}
-
-\title{RESTaurant for Android: Programmierung einer Sitzplatzreservierung \\ Teil II}   
-\author{Janis Streib \\ CC-BY-SA} 
+%\def\pause{}
+\title{RESTaurant for Android: Programmierung einer Sitzplatzreservierung \\ Teil II}
 \date{02.-06.11.2015} 
 
 \frame{\titlepage} 
@@ -143,7 +111,7 @@
 		\item 
 	\end{itemize}
 }
-\section{Objectorientierung}
+\section{Objektorientierung}
 \subsection{Modellierung}
 \frame{\frametitle{Modellieren}		
 	Modellieren Sie in Java: \\
@@ -273,7 +241,8 @@
 	\end{itemize}
 }
 \section{Exeptions}
-\section{}
+\section{Streams}
+\section{Eine Webseite "herunterladen"}
 % ???
 \end{document}
 

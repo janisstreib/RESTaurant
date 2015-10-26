@@ -6,45 +6,12 @@
 \useoutertheme {smoothbars}
 \usepackage{verbatim}
 \usepackage{listings}
-\usepackage{color}
-\definecolor{name}{rgb}{0.5,0.5,0.5}
-\definecolor{javared}{rgb}{0.6,0,0} % for strings
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
-\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
-\lstset{language=Java,
-	basicstyle=\ttfamily,
-	keywordstyle=\color{javapurple}\bfseries,
-	stringstyle=\color{javared},
-	commentstyle=\color{javagreen},
-	morecomment=[s][\color{javadocblue}]{/**}{*/},
-	numbers=left,
-	numberstyle=\tiny\color{black},
-	stepnumber=2,
-	numbersep=10pt,
-	tabsize=4,
-	showspaces=false,
-	showstringspaces=false}
-
-\defbeamertemplate*{footline}{smoothbars theme}
-{%
-	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-		leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-		\leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
-		\hfill%
-		{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor}%
-	\end{beamercolorbox}%
-	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
-	\end{beamercolorbox}
-}
-
+\input{cc-templ.tex}
 \begin{document}
-
+%\def\pause{}
 \title{RESTaurant for Android: Programmierung einer Sitzplatzreservierung \\ Teil IV}   
-\author{Janis Streib \\ CC-BY-SA} 
+
 \date{02.-06.11.2015} 
 
 \frame{\titlepage} 
@@ -56,15 +23,7 @@
 % Add code here
 %\end{lstlisting}
 \section{RESTaurant?}
-\subsection{REST}
-\frame{\frametitle{REST}
-	\begin{itemize}
-		\item Der RESTaurant-Server bietet zur Kommunikatoin mit der App ein REST-API über HTTP an
-		\item API := Application Programming Interface
-		\item REST (oder ReST) := Representational State Transfer
-		\item "REST fordert, dass eine URI (Adresse) genau einen Seiteninhalt repräsentiert, und dass ein Web-/REST-Server auf mehrfache Anfragen mit demselben URI auch mit demselben Webseiteninhalt antwortet." - \url{https://de.wikipedia.org/wiki/Representational_State_Transfer}
-	\end{itemize}
-}
+
 \subsection{JSON}
 \frame{\frametitle{JSON}
 	\begin{columns}
@@ -85,11 +44,17 @@
 }
 \subsection{HTTP}
 \frame{\frametitle{HTTP}
-	Beispiel eines HTTP-GET-Requestes an einen Webserver auf www.dogcraft.de:
+	\begin{itemize}
+		\item Baut auf einer zuverlässigen, bidirektionalen Verbindung auf.
+	\end{itemize}
+	\pause
+	Beispiel eines HTTP-GET-Requestes an einen Webserver auf http://www.dogcraft.de/:
 	{\tiny \verbatiminput{samples/http.txt}}
+	Prameter könnnen als Key-Value-Paare übergeben werden in der Form:\\
+	{\tt ?key2=value2\&key1=value1}
 }
 \frame{\frametitle{Request-Methoden}
-	Mögliche Request-methoden:
+	Mögliche Request-methoden zur Beschreibung der gewünschten Aktion:
 	\begin{itemize}
 		\item GET (siehe oben)- Zur Abfrage von Daten
 		\item POST - Zum Übermitteln von Daten
@@ -109,6 +74,22 @@
 	\end{itemize}
 	Viele weitere Statuscodes:\\ \url{https://de.wikipedia.org/wiki/HTTP-Statuscode\#Liste_der_HTTP-Statuscodes}
 }
+
+\subsection{API?}
+\frame{\frametitle{Wie könnte eine geignete Schnittstelle aussehen?}
+	%Anfordeurngen: Viele benutzer, korrektes, konsistentes verhalten, logisch strukturiert, vertsändlich
+}
+
+\subsection{REST}
+\frame{\frametitle{REST}
+	\begin{itemize}
+		\item Der RESTaurant-Server bietet zur Kommunikatoin mit der App ein REST-API über HTTP an
+		\item API := Application Programming Interface
+		\item REST (oder ReST) := Representational State Transfer
+		\item "REST fordert, dass eine URI (Adresse) genau einen Seiteninhalt repräsentiert, und dass ein Web-/REST-Server auf mehrfache Anfragen mit demselben URI auch mit demselben Webseiteninhalt antwortet." - \url{https://de.wikipedia.org/wiki/Representational_State_Transfer}
+	\end{itemize}
+}
+
 \section{Die API}
 \frame{\frametitle{Die RESTaurant API}
 	\begin{itemize}
@@ -126,7 +107,7 @@
 		\item Booking:\\ {\tt \{"name":"Kurti", "end":1445798161, "id":8779481398776661660, "begin":1445797161, "table":\{"atWindow":false, "id":1, "seats":12\}\}}
 	\end{itemize}
 }
-\frame{\frametitle{Tables}
+\frame{\frametitle{Table}
 	\begin{itemize}
 		\item Jeder Tisch hat eine ID, eine Plaztzanzahl und die Information, ob er sich am Fenster befindet
 		\item Tables:\\ {\tt [\{"atWindow":false, "id":1, "seats":12\}, \{"atWindow":true, "id":2, "seats":2\}, \{"atWindow":true, "id":3, "seats":2\}, \{"atWindow":false, "id":4, "seats":4\}, \{"atWindow":true, "id":5, "seats":4\}, \{"atWindow":false, "id":6, "seats":4\}]
@@ -134,8 +115,7 @@
 	\end{itemize}
 }
 \subsection{Neue Reservierung}
-\frame{\frametitle{Eine neue Reservierung anlegen}
-	HTTP-PUT-Request an {\tt /booking/} \\\vspace{.4cm}
+\frame{\label{newbook}\frametitle{Eine neue Reservierung anlegen}
 	\begin{tabular}{ c | p{3.5cm} | p{3.7cm} }
 		Parameter & Bedingungen & Funktion \\
 		\hline
@@ -172,7 +152,7 @@
 \subsection{Reservierung aktualisieren}
 \frame{\frametitle{Eine Reservierung aktualisieren}
 	HTTP-POST-Request an {\tt /booking/\{booking-id\}} \\\vspace{.4cm}
-	Parameter und Statuscodes wie bei einer \hyperlink{page.12}{neuen Reservierung}.\\\vspace{.4cm}
+	Parameter und Statuscodes wie bei einer \hyperlink{newbook}{neuen Reservierung}.\\\vspace{.4cm}
 	Antwort:\\Das aktualisierte Booking-Objekt
 }
 
