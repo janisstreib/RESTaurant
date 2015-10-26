@@ -242,6 +242,25 @@
 	\end{itemize}
 }
 \section{Exeptions}
+\frame{\frametitle{Exceptions}
+	\begin{itemize}
+		\item Zur behandlung von Ausnahmefällen und Fehlern gibt es in Java \emph{Exceptions}
+		\item Exceptions sind Objekte des Typs \emph{Exception}, die \emph{Throwables} sind (implementieren)
+		\item Exceptions können in Methoden mittels des Codeworts {\tt throw} an die aufrufenden der Methode (Caller) geworfen werden
+	\end{itemize}
+}
+\frame{\frametitle{Exceptions}
+	\begin{itemize}
+		\item Exceptions können mittels \\{\tt try \{ \\...\\ \} catch(Exception e) \{ \\...\\\}\\} gefangen und behandelt werden (z.B Ausgabe einer Fehlermeldung)
+		\item Caller-Methoden \emph{müssen} geworfene Exceptoins behandeln (sonst gibt es einen Compilefehler)
+		\item Methoden, die bestimmte Exceptions werfen, werden mit {\tt throws Execption1, Exception2} nach dem Methodennamen markiert
+		\item Sowohl {\tt try} alsauch {\tt throws} sind Behandlungen
+	\end{itemize}
+}
+\frame{\frametitle{Beispiel}
+	\tiny {
+\lstinputlisting{samples/Exceptions.java}}
+}
 \section{Streams}
 \section{Eine Webseite "herunterladen"}
 % ???
