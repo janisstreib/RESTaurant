@@ -242,7 +242,7 @@
 	\end{itemize}
 }
 \section{Exeptions}
-\subsection{Exceptions}
+\subsection{Handling}
 \frame{\frametitle{Exceptions}
 	\begin{itemize}
 		\item Zur behandlung von Ausnahmefällen und Fehlern gibt es in Java \emph{Exceptions}
@@ -258,13 +258,37 @@
 		\item Sowohl {\tt try} alsauch {\tt throws} sind Behandlungen
 	\end{itemize}
 }
-\subsection{Beispiel}
+
 \frame{\frametitle{Beispiel}
 	\tiny {
 \lstinputlisting{samples/Exceptions.java}}
 }
 \section{Streams}
-\section{Eine Webseite "herunterladen"}
-% ???
+\frame{\frametitle{Streams}
+	\begin{itemize}
+		\item Streams sind in Java der Weg, um Eingaben entgegenzunehmen und Ausgaben zu tätigen (I/O) \pause
+		\item {\tt System.in} ist beispielweise ein {\tt InputStream}, der Konsoleneingaben vom Benutzer entgegen nimmt \pause
+		\item {\tt System.out} ist ein {\tt OutputStream}, der Konsolenausgaben dem Benutzer präsentiert \pause
+		\item Ein {\tt FileInputStream} erlaubt das Lesen einer Datei \pause
+		\item $\Rightarrow$ nach diesem Muster gibt es viele andere Streams, die alle gleich benutzt werden können
+		\item $\Rightarrow$ Konsistente und vielfältige Möglichkeiten für I/O
+		
+	\end{itemize}
+}
+\frame{\frametitle{Benutzung von Streams}
+	\begin{itemize}
+		\item Angenehmer weg zum Schreiben: z.B. der {\tt BufferedWriter} (nimmt einen {\tt Writer} entgegen, der einen beliebigen {\tt OutputStream} entgegen nimmt)
+		\item Analog zum Lesen: z.B. der {\tt BufferedReader} (nimmt einen {\tt Reader} entgegen, der einen beliebigen {\tt InputStream} entgegen nimmt)
+	\end{itemize}
+}
+\subsection{Eine Webseite "herunterladen"}
+\frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
+	Bauen Sie ein kleines Programm, dass eine beliebige Webseite anfrägt und herunterlädt.\\
+	Benutzen sie dazu eine {\tt HttpURLConnection}, deren OutputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die html-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
+}
+\frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
+	\tiny{\lstinputlisting{samples/WebsiteDownloader.java}}
+}
+
 \end{document}
 
