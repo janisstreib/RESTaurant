@@ -284,7 +284,7 @@
 \subsection{Eine Webseite "herunterladen"}
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
 	Bauen Sie ein kleines Programm, dass eine beliebige Webseite anfrägt und herunterlädt.\\
-	Benutzen sie dazu eine {\tt HttpURLConnection}, deren OutputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die html-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
+	Benutzen sie dazu eine {\tt HttpURLConnection}, deren InputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die html-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
 }
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
 	\tiny{\lstinputlisting{samples/WebsiteDownloader.java}}
