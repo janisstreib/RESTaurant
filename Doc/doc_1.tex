@@ -62,7 +62,26 @@
 }
 }
 \section{AVD einrichten}
+	\frame{\frametitle{AVDs}		
+		\begin{itemize}
+			\item Das Android-SDK stellt die möglichkeit eines Android-Emulators zur verfügung
+			\item Ermöglicht die ausführung beliebiger Android-versionen und Formfaktoren ohne echtes Smartphone/Tablet/Watch/...
+			\item AVD := Android Virtual Device
+		\end{itemize}
+	}
 \subsection{Image herunterladen}
-\subsection{Virtuelles Smartphone ausführen}
+\forloop{ct}{1}{\value{ct} < 3}%
+{%
+	\frame{\frametitle{Image herunterladen}		
+		\includegraphics[width=116mm]{img/avd\arabic{ct}}
+	}
+}
+\subsection{Virtuelles Smartphone einrichten}
+\forloop{ct}{3}{\value{ct} < 9}%
+{%
+	\frame{\frametitle{Virtuelles Smartphone einrichten}		
+		\includegraphics[width=116mm]{img/avd\arabic{ct}}
+	}
+}
 \end{document}
 
