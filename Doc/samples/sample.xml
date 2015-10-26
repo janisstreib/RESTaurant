@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workshop>
+     <title>Programmierung einer Sitzplatzreservierung</title>
+     <teacher male="m">Janis Streib</teacher>
+     <participants>
+          <participant>Max Mustermann</participant>
+          <participant>Kurti Hansel</participant>
+     </participants>
+     <bookedOut/>
+</workshop>
