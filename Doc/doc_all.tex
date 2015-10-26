@@ -1,0 +1,28 @@
+\documentclass[handout]{beamer}
+\usepackage{docmute}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{forloop}
+\usepackage{amsmath,amsfonts,amssymb}
+\useoutertheme {smoothbars}
+\usepackage{verbatim}
+\input{cc-templ}
+\makeatletter
+\AtBeginPart{%
+	\beamer@tocsectionnumber=0\relax
+	\setcounter{section}{0}
+	%\def\pause{0}
+	%\frame{\partpage}%
+}
+\makeatother
+
+\begin{document}
+	\part{Part I}
+	\input{doc_1}   %  Load standalone SectionOne.tex
+	\part{Part II}
+	\input{doc_2}
+	\part{Part III}
+	\input{doc_3}
+	\part{Part IV}
+	\input{doc_4}
+\end{document}
