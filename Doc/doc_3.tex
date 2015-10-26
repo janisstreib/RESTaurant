@@ -82,10 +82,15 @@
 \section{UI-Gestaltung}
 \section{UI zu Code}
 \section{Zinsrechner}
+\frame{\frametitle{Mini-Projekt: Zinsrechner}
+	Designen und Bauen Sie einen kleinen Zinsrechner, bei dem der Benutzer ein Startkapital und einen Zinssatz angeben kann und sein Endkapital zurückgeliefert bekommt.
+	
+	\pause Musterlösung:\\ \url{https://github.com/janisstreib/RESTaurant/tree/master/Zinsrechner}
+}
 \section{Zustandshaltung}
 \frame{\frametitle{Zustandshaltung}
 	\begin{itemize}
-		\item Experiment: Display drehen (in einem AVD: {\tt Strg + F11} / {\tt Strg + F12}) \pause
+		\item Experiment mit dem Zinsrechner: Display drehen (in einem AVD: {\tt Strg + F11} / {\tt Strg + F12}) \pause
 		\item Grund: Bei jedem komplett neuen Zeichnen des UIs wird {\tt onCreate()} neu aufgerufen und die Activity neu instanziiert \pause
 		\item Lösung: {\tt onSaveInstanceState()} und {\tt onRestoreInstanceState()} sowie der Parameter {\tt savedInstanceState} in {\tt onCreate()}
 		\item Variablen und Zustände werden in einem {\tt Bundles} bei {\tt onRestoreInstanceState()} gespeichert und vom Android-System entgegengenommen. Wenn die Activity vom System wieder geweckt wird, wird dieses Bundle der Activity wieder zurückgeführt.
@@ -94,6 +99,11 @@
 }
 \frame{\frametitle{Beispiel}
 	\tiny{ \lstinputlisting{samples/Instance.java} }
+}
+\frame{\frametitle{Implementieren}
+	Implementieren Sie die Zustandshaltung in Ihrem Zinsrechner.\\
+	Musterlösung: \\\pause
+	\url{https://github.com/janisstreib/RESTaurant/tree/master/ZinsrechnerEnhanced}
 }
 \section{Android Documentaion}
 \frame{\frametitle{Android Documentation}
