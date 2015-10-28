@@ -108,7 +108,7 @@
 \subsection{Implementierung/Benutzung}
 \frame{\frametitle{Beispiel}
 	Angenommen, man möchte eine LinkedList benutzen, um eine Menge von Kursteilnehmern zu speichern.
-	Dazu beietet sich eine LinkedList an. Damit man in "unsere" LinkedList nur Objekte vom Typ "Kursteilnehmer" stecken kann, ist die LinkedList ein Generic.
+	Dazu bietet sich eine LinkedList an. Damit man in "unsere" LinkedList nur Objekte vom Typ "Kursteilnehmer" stecken kann, ist die LinkedList ein Generic.
 	 \tiny {\lstinputlisting{samples/GenericSample.java}
 	 \lstinputlisting{samples/Participant.java}}
 }
@@ -145,7 +145,7 @@
 		\end{itemize}
 		\item Wagon
 		\begin{itemize}
-			\item Passagierwgaon  \pause
+			\item Passagierwagon  \pause
 			\begin{itemize}
 				\item \textcolor{green}{Speisewagon}
 				\item \textcolor{green}{Personenwagon}
@@ -205,7 +205,7 @@
 \frame{\frametitle{Analyse}
 	\begin{itemize}
 		\item Der Operator {\tt instance1 instanceof Object2} gibt genau dann {\tt true} zurück, "wenn {\tt instance1} eine Instanz von {\tt Objekt2}" ist.
-		\item Ein Objekt, das von einem anderen Objekt erbt, kann zu diesem "höheren" (bzw. konreteren) \emph{gecastet werden}.
+		\item Ein Objekt, das von einem anderen Objekt erbt, kann zu diesem "höheren" (bzw. konreteren) \emph{gecastet} werden.
 		\item Beispiel: \tiny {\lstinputlisting{samples/CastSample.java}}
 		\item \normalsize {Im folgenden wird der Typ der Instanz durch einen Doppelpunkt gekennzeichnet (also {\tt instance:Object})}
 	\end{itemize}
@@ -246,14 +246,14 @@
 \frame{\frametitle{Exceptions}
 	\begin{itemize}
 		\item Zur behandlung von Ausnahmefällen und Fehlern gibt es in Java \emph{Exceptions}
-		\item Exceptions sind Objekte des Typs \emph{Exception}, die \emph{Throwables} sind (implementieren)
-		\item Exceptions können in Methoden mittels des Codeworts {\tt throw} an die aufrufenden der Methode (Caller) geworfen werden
+		\item Exceptions sind Objekte des Typs \emph{Exception}, die \emph{Throwables} sind
+		\item Exceptions können in Methoden mittels des Codeworts {\tt throw} an die Aufrufenden der Methode (Caller) geworfen werden
 	\end{itemize}
 }
 \frame{\frametitle{Exceptions}
 	\begin{itemize}
 		\item Exceptions können mittels \\{\tt try \{ \\...\\ \} catch(Exception e) \{ \\...\\\}\\} gefangen und behandelt werden (z.B Ausgabe einer Fehlermeldung)
-		\item Caller-Methoden \emph{müssen} geworfene Exceptoins behandeln (sonst gibt es einen Compilefehler)
+		\item Caller-Methoden \emph{müssen} geworfene Exceptions behandeln (sonst gibt es einen Compilefehler)
 		\item Methoden, die bestimmte Exceptions werfen, werden mit {\tt throws Execption1, Exception2} nach dem Methodennamen markiert
 		\item Sowohl {\tt try} als auch {\tt throws} sind Behandlungen
 	\end{itemize}
@@ -277,8 +277,8 @@
 }
 \frame{\frametitle{Benutzung von Streams}
 	\begin{itemize}
-		\item InputStreams lesen die einzelnen, "rohen" bytes
-		\item Reader lesen und dekodieren character (einzelne Zeichen)
+		\item InputStreams lesen die einzelnen, "rohen" Bytes
+		\item Reader lesen und dekodieren Character (einzelne Zeichen)
 		\item BufferedReader puffern ganze Zeichenketten (String) bis zum nächsten new line character ({\tt .readLine()})
 		\item Angenehmer Weg zum Schreiben: z.B. der {\tt BufferedWriter} (nimmt einen {\tt OutputStreamWriter} entgegen, der einen beliebigen {\tt OutputStream} entgegen nimmt)
 		\item Analog zum Lesen: z.B. der {\tt BufferedReader} (nimmt einen {\tt InputStreamReader} entgegen, der einen beliebigen {\tt InputStream} entgegen nimmt)
@@ -298,7 +298,7 @@
 		\begin{enumerate}
 			\item Autovervollständigung benutzen! \\
 			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschleunigt die Arbeit massiv und importiert dabei automatisch die benötigeten Pakete.
-			\item IDEs wissen meißtens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und anwenden.
+			\item IDEs wissen meistens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und anwenden.
 			\item Häufig speichern! \\ Bei einem möglichen Absturtz oder einer Unachtsamkeit sind Sie dann eher auf der sicheren Seite.
 			\item Häufig testen (iteratives Programmieren)! \\ Häufiges Testen/Ausführen Ihres Codes erhöht die Stabilität und Funktionalität und hilft außerdem dabei, schnell die Funktionalität Ihrer Algorithmen zu bestätigen und frühzeitig korrigieren zu können.
 		\end{enumerate}
