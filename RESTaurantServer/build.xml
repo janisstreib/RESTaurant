@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="RESTaurantServer">
+	<path id="restserver.classpath">
+		<pathelement location="bin" />
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<path id="jufogasradio_plugins.classpath">
+		<pathelement location="bin" />
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src/">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target depends="init" name="build">
+		<javac debug="true" destdir="bin" includeantruntime="false"
+			source="1.7" target="1.7">
+			<src path="src" />
+			<classpath refid="restserver.classpath" />
+		</javac>
+	</target>
+	<target depends="build" name="pack">
+		<jar destfile="RESTaurant.jar" basedir="bin" manifest="SensNetNode.MF" />
+		<zip destfile="static.zip" basedir="static" />
+	</target>
+	<target depends="build" name="pack-full">
+		<jar destfile="RESTaurant-full.jar" basedir="bin" manifest="SensNetNode.MF">
+			<restrict>
+				<archives>
+					<zips>
+						<fileset dir="lib">
+							<include name="**/*.jar" />
+						</fileset>
+					</zips>
+				</archives>
+			</restrict>
+		</jar>
+		<echo level="warning"
+			message="WARNING: add proper copyright notice before distributing JufoGasRadio-full.jar." />
+	</target>
+	<target name="pack-heavy" depends="pack">
+		<jar destfile="SensNetNode-heavy.jar" basedir="bin" manifest="SensNetNode.MF">
+			<restrict>
+				<not>
+					<or>
+						<name name="META-INF/LICENSE" />
+						<name name="META-INF/NOTICE" />
+					</or>
+				</not>
+				<archives>
+					<zips>
+						<fileset dir="lib">
+							<include name="**/*.jar" />
+						</fileset>
+						<fileset dir=".">
+							<include name="SensNetNode-Plugins.jar"></include>
+						</fileset>
+					</zips>
+				</archives>
+			</restrict>
+		</jar>
+		<echo level="warning"
+			message="WARNING: add proper copyright notice before distributing JufoGasRadio-full.jar." />
+	</target>
+	<target name="all" depends="pack,pack-full,pack-heavy,javadoc" />
+	<target name="run" depends="pack">
+		<java classname="net.sensnet.node.Launcher" fork="true"
+			failonerror="true">
+			<classpath>
+				<pathelement location="SensNetNode.jar" />
+				<path refid="jufogasradio.classpath" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="javadoc">
+		<javadoc destdir="static/doc/api" author="true" version="true" use="true"
+			windowtitle="Test API">
+
+			<packageset dir="src" defaultexcludes="yes">
+			</packageset>
+			<packageset dir="plugins" defaultexcludes="yes">
+			</packageset>
+			<doctitle><![CDATA[<h1>SensNet API documentatoion</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2015 SensNet.</i>]]></bottom>
+		</javadoc>
+	</target>
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir=".">
+				<include name="bin/**/*" />
+				<include name="SensNetNode.jar" />
+				<include name="SensNetNode-Plugins.jar" />
+				<include name="SensNetNode-full.jar" />
+			</fileset>
+		</delete>
+	</target>
+</project>
