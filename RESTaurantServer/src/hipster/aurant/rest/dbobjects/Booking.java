@@ -16,6 +16,7 @@ public class Booking {
 	private Date begin, end;
 	private Table table;
 	private long id;
+	private Restaurant restaurant;
 
 	public static Booking getById(long id) throws SQLException {
 		PreparedStatement s = DatabaseConnection.getInstance().prepare(
@@ -29,23 +30,25 @@ public class Booking {
 
 	}
 
-	public Booking(String name, Date begin, Table table, Date end)
+	public Booking(Restaurant restaurant, String name, Date begin, Table table)
 			throws SQLException {
 		this.name = name;
 		this.begin = begin;
 		this.table = table;
+		Date end = new Date(begin.getTime() + 1000 * 60 * 60 * 3);
 		this.end = end;
 		SecureRandom r = new SecureRandom();
 		this.id = Math.abs(r.nextLong());
 		PreparedStatement prep = DatabaseConnection
 				.getInstance()
 				.prepare(
-						"INSERT INTO bookings SET id=?, name=?, `table`=?, timeBegin=?, timeEnd=?");
+						"INSERT INTO bookings SET id=?, name=?, `table`=?, timeBegin=?, timeEnd=?, restaurant=?");
 		prep.setLong(1, id);
 		prep.setString(2, name);
 		prep.setInt(3, table.getId());
 		prep.setLong(4, begin.getTime());
 		prep.setLong(5, end.getTime());
+		prep.setInt(6, restaurant.getId());
 		prep.execute();
 	}
 
@@ -54,7 +57,8 @@ public class Booking {
 		this.begin = new Date(r.getLong("timeBegin"));
 		this.end = new Date(r.getLong("timeEnd"));
 		this.id = r.getLong("id");
-		this.table = Table.getById(r.getInt("table"));
+		this.restaurant = Restaurant.getById(r.getInt("restaurant"));
+		this.table = Table.getById(r.getInt("table"), restaurant);
 	}
 
 	public long getId() {

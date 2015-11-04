@@ -1,6 +1,7 @@
 package hipster.aurant.rest;
 
 import hipster.aurant.rest.dbobjects.Booking;
+import hipster.aurant.rest.dbobjects.Restaurant;
 import hipster.aurant.rest.dbobjects.Table;
 
 import java.io.BufferedReader;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -75,29 +77,31 @@ public class RESTAurant extends HttpServlet {
 			if (pathInfo.startsWith("/booking/")) {
 				String r = pathInfo.substring("/booking/".length(),
 						pathInfo.length());
-				if (action == RESTAction.PUT) {
-					Date begin = new Date(Long.parseLong(req
-							.getParameter("begin")));
-					Date end = new Date(Long.parseLong(req.getParameter("end")));
-					if (end.getTime() <= begin.getTime()) {
-						resp.sendError(400, "end <= begin");
+				if (r.startsWith("restaurant/")) {
+					r = r.substring("restaurant/".length(), r.length());
+					if (action == RESTAction.PUT) {
+						Restaurant rest = Restaurant.getById(Integer
+								.parseInt(r));
+						Date begin = new Date(Long.parseLong(req
+								.getParameter("begin")));
+
+						Table table = Table.getById(
+								Integer.parseInt(req.getParameter("table")),
+								rest);
+						if (table == null) {
+							resp.sendError(400, "table not existant");
+							return;
+						}
+						if (!table.isBookable(begin)) {
+							resp.sendError(409, "table not bookable anymore");
+							return;
+						}
+						Booking b = new Booking(rest, req.getParameter("name"),
+								begin, table);
+						resp.setStatus(201);
+						resp.getWriter().println(b.toJSON());
 						return;
 					}
-					Table table = Table.getById(Integer.parseInt(req
-							.getParameter("table")));
-					if (table == null) {
-						resp.sendError(400, "table not existant");
-						return;
-					}
-					if (!table.isBookable(begin, end)) {
-						resp.sendError(409, "table not bookable anymore");
-						return;
-					}
-					Booking b = new Booking(req.getParameter("name"), begin,
-							table, end);
-					resp.setStatus(201);
-					resp.getWriter().println(b.toJSON());
-					return;
 				}
 
 				// actions on specific booking
@@ -122,16 +126,38 @@ public class RESTAurant extends HttpServlet {
 							break;
 					}
 				}
-			} else if (pathInfo.startsWith("/tables")) {
+			} else if (pathInfo.startsWith("/restaurants")) {
 				if (action == RESTAction.GET) {
-					ResultSet res = DatabaseConnection.getInstance()
-							.prepare("SELECT * FROM tables").executeQuery();
-					res.beforeFirst();
-					LinkedList<Object> obj = new LinkedList<Object>();
-					while (res.next()) {
-						obj.add(new Table(res).toJSON());
+					String r = pathInfo.substring("/restaurants".length(),
+							pathInfo.length());
+					if (r.isEmpty()) {
+						ResultSet res = DatabaseConnection.getInstance()
+								.prepare("SELECT * FROM restaurants")
+								.executeQuery();
+						res.beforeFirst();
+						LinkedList<Object> obj = new LinkedList<Object>();
+						while (res.next()) {
+							obj.add(new Restaurant(res).toJSON());
+						}
+						resp.getWriter().println(new JSONArray(obj));
+					} else {
+						String[] parts = r.split("/");
+						if (parts[1].equals("tables")) {
+							PreparedStatement prepare = DatabaseConnection
+									.getInstance()
+									.prepare(
+											"SELECT * FROM tables WHERE restaurant=?");
+							prepare.setInt(1, Integer.parseInt(parts[0]));
+							ResultSet res = prepare.executeQuery();
+							res.beforeFirst();
+							LinkedList<Object> obj = new LinkedList<Object>();
+							while (res.next()) {
+								obj.add(new Table(res).toJSON());
+							}
+							resp.getWriter().println(new JSONArray(obj));
+						}
 					}
-					resp.getWriter().println(new JSONArray(obj));
+
 					return;
 				}
 			}
