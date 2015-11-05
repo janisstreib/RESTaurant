@@ -142,12 +142,12 @@ public class RESTAurant extends HttpServlet {
 						resp.getWriter().println(new JSONArray(obj));
 					} else {
 						String[] parts = r.split("/");
-						if (parts[1].equals("tables")) {
+						if (parts[2].equals("tables")) {
 							PreparedStatement prepare = DatabaseConnection
 									.getInstance()
 									.prepare(
 											"SELECT * FROM tables WHERE restaurant=?");
-							prepare.setInt(1, Integer.parseInt(parts[0]));
+							prepare.setInt(1, Integer.parseInt(parts[1]));
 							ResultSet res = prepare.executeQuery();
 							res.beforeFirst();
 							LinkedList<Object> obj = new LinkedList<Object>();
