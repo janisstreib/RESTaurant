@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -65,6 +67,8 @@ public class RESTAurant extends HttpServlet {
 	private void handleRequest(HttpServletRequest req,
 			HttpServletResponse resp, RESTAction action) throws IOException {
 		String pathInfo = req.getPathInfo();
+		PrintWriter writer = new PrintWriter(new OutputStreamWriter(
+				resp.getOutputStream()));
 		try {
 			if (pathInfo.equals("/")) {
 				if (new File(indexPageUrl.toURI()).lastModified() > lastLoaded) {
@@ -99,7 +103,7 @@ public class RESTAurant extends HttpServlet {
 						Booking b = new Booking(rest, req.getParameter("name"),
 								begin, table);
 						resp.setStatus(201);
-						resp.getWriter().println(b.toJSON());
+						writer.println(b.toJSON());
 						return;
 					}
 				}
@@ -113,7 +117,7 @@ public class RESTAurant extends HttpServlet {
 					}
 					switch (action) {
 						case GET:
-							resp.getWriter().println(b.toJSON());
+							writer.println(b.toJSON());
 							return;
 						case POST:
 
@@ -154,7 +158,8 @@ public class RESTAurant extends HttpServlet {
 							while (res.next()) {
 								obj.add(new Table(res).toJSON());
 							}
-							resp.getWriter().println(new JSONArray(obj));
+
+							writer.println(new JSONArray(obj));
 						}
 					}
 
