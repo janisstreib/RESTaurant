@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2015 at 12:52 PM
+-- Generation Time: Nov 05, 2015 at 01:11 PM
 -- Server version: 5.6.25-4
 -- PHP Version: 5.6.14-1
 
@@ -31,8 +31,16 @@ CREATE TABLE `bookings` (
   `name` varchar(100) NOT NULL,
   `timeBegin` bigint(20) NOT NULL,
   `table` int(11) NOT NULL,
-  `restaurant` int(11) NOT NULL
+  `restaurant` int(11) NOT NULL,
+  `timeEnd` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `name`, `timeBegin`, `table`, `restaurant`, `timeEnd`) VALUES
+(5675836160640280924, 'peter', 0, 7, 1, 10800000);
 
 -- --------------------------------------------------------
 
