@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 05, 2015 at 01:11 PM
+-- Generation Time: Nov 05, 2015 at 02:13 PM
 -- Server version: 5.6.25-4
 -- PHP Version: 5.6.14-1
 
@@ -53,7 +53,7 @@ CREATE TABLE `restaurants` (
   `name` varchar(200) COLLATE utf8_bin NOT NULL,
   `owner` varchar(200) COLLATE utf8_bin NOT NULL,
   `accessible` tinyint(1) NOT NULL,
-  `eattype` enum('BADISCH','BBQ','CHINESISCH','INDISCH','TÜRKISCH') COLLATE utf8_bin NOT NULL,
+  `eattype` enum('BADISCH','BBQ','CHINESISCH','INDISCH','TURKEY') COLLATE utf8_bin NOT NULL,
   `parking_space` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -65,7 +65,7 @@ INSERT INTO `restaurants` (`id`, `name`, `owner`, `accessible`, `eattype`, `park
 (1, 'Maria Bar', 'Maria', 1, 'BBQ', 0),
 (2, 'Zum Drachen', 'Herr Drache', 0, 'CHINESISCH', 5),
 (3, 'Zum Löwen', 'Familie Löwe', 0, 'BADISCH', 10),
-(4, 'Zum kleinen Riesen', 'Herr Riese', 1, 'TÜRKISCH', 0);
+(4, 'Zum kleinen Riesen', 'Herr Riese', 1, 'TURKEY', 0);
 
 -- --------------------------------------------------------
 
