@@ -36,13 +36,14 @@ public class Restaurant {
 		this.eatType = EatType.valueOf(r.getString("eattype"));
 	}
 
-	public Restaurant(String owner, String name, EatType eatType,
+	public Restaurant(int id, String owner, String name, EatType eatType,
 			int parkingSpace, boolean accessible) {
 		this.owner = owner;
 		this.name = name;
 		this.eatType = eatType;
 		this.parkingSpace = parkingSpace;
 		this.accessible = accessible;
+		this.id = id;
 	}
 
 	public EatType getEatType() {
