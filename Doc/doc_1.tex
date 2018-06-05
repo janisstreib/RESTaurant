@@ -20,8 +20,8 @@
 \subsection{JDK}
 \frame{\frametitle{JDK installieren}
  \begin{itemize}
- 	\item Java Development Kit (JDK), der Compiler und Java Systembibliotheken enthält (aktuell: JDK8): \\
- 	\url{https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}
+     \item Java Development Kit (JDK), der neben der JVM (Java Virtual Machine) auch Compiler und Java Systembibliotheken enthält (aktuell: JDK10): \\
+ 	\url{http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html}
 \end{itemize}
 }
 \section{Android Studio installieren}
@@ -31,36 +31,17 @@
 		\item Zur Gestaltung der späteren Benutzeroberfläche der App benötigen wir die offizielle Android-Entwicklungsumgebung
 		\item Android Studio basiert auf der populären IDE IntelliJ
 		\item Android Studio: \\
-		\url{https://developer.android.com/sdk/index.html}
+		\url{https://developer.android.com/studio/}
 	\end{itemize}
 }
-\forloop{ct}{1}{\value{ct} < 9}%
+\forloop{ct}{1}{\value{ct} < 10}%
 {%
 	\frame{\frametitle{Android Studio einrichten}		
 			\includegraphics[width=116mm]{img/inst\arabic{ct}}	
 	}
 }
 
-\section{NetBeans IDE installieren}
-\subsection{NetBeans}
-\frame{\frametitle{NetBeans IDE installieren}
-	\begin{itemize}
-		\item NetBeans IDE (for Java SE): \\
-		\url{https://netbeans.org/}
-		\item NBAndroid Plugin zur Androidentwicklung in NetBeans: \\
-		\url{https://bitbucket.org/nbandroid/nbandroid/wiki/Installation}
-		\item NetBeans Updatesite:
-		\url{http://nbandroid.org/updates/updates.xml}
-	\end{itemize}
-}
-
-\forloop{ct}{1}{\value{ct} < 11}%
-{%
-\frame{\frametitle{NetBeans IDE einrichten}		
-		\includegraphics[width=116mm]{img/net\arabic{ct}}
-}
-}
-\section{AVD einrichten}
+\section{AVDs}
 	\frame{\frametitle{AVDs}		
 		\begin{itemize}
 			\item Das Android-SDK stellt die Möglichkeit eines Android-Emulators zur Verfügung
@@ -68,19 +49,14 @@
 			\item AVD := Android Virtual Device
 		\end{itemize}
 	}
-\subsection{Image herunterladen}
-\forloop{ct}{1}{\value{ct} < 3}%
-{%
-	\frame{\frametitle{Image herunterladen}		
-		\includegraphics[width=116mm]{img/avd\arabic{ct}}
-	}
+\section{NetBeans IDE installieren}
+\subsection{NetBeans}
+\frame{\frametitle{NetBeans IDE installieren}
+	\begin{itemize}
+		\item NetBeans IDE (for Java SE): \\
+		\url{https://netbeans.org/}
+	\end{itemize}
 }
-\subsection{Virtuelles Smartphone einrichten}
-\forloop{ct}{3}{\value{ct} < 9}%
-{%
-	\frame{\frametitle{Virtuelles Smartphone einrichten}		
-		\includegraphics[width=116mm]{img/avd\arabic{ct}}
-	}
-}
+
 \end{document}
 
