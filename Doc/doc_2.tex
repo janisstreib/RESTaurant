@@ -40,6 +40,19 @@
 \section{Kleine Aufgaben zum warm werden}
 \subsection{Finde den Fehler!}
 \frame{\frametitle{Finde den Fehler!}		
+	\lstinputlisting{samples/Sample0.java}
+}
+
+\frame{\frametitle{Finde den Fehler!}		
+	\begin{itemize}
+		\item Kompiliert es? \pause
+		\item $\Rightarrow$ \textcolor{red}{Nein}\pause
+		\item Wie kann man es reparieren? \pause
+        \item Coder innerhalb von "Blöcken" wie Klassen ({\tt{class}}), Methoden oder Kontrollstrukturen muss mit {\tt{\{\dots\}}} "eingerahmt" werden
+		
+	\end{itemize}
+}
+\frame{\frametitle{Finde den Fehler!}		
 	\lstinputlisting{samples/Sample1.java}
 }
 
@@ -48,7 +61,7 @@
 		\item Kompiliert es? \pause
 		\item $\Rightarrow$ \textcolor{red}{Nein}\pause
 		\item Wie kann man es reparieren? \pause
-		\item 'Hallo Welt!' ist ein String und muss deshalb in " "
+		\item 'Hallo Welt!' ist ein String-Literal und muss deshalb in " "
 		
 	\end{itemize}
 }
@@ -95,6 +108,50 @@
 		\item Wie kann man es reparieren? \pause
 		\item Den Konstruktorparameter der Instanzvariable zuweisen (Codewort 'this', um auf die Instanz zuzugreifen anstatt der lokalen Variable)	
 	\end{itemize}
+}
+\section{Kontrollstrukturen}
+\frame[allowframebreaks]{\frametitle{Konstrollstrukturen}
+\begin{itemize}
+    \item Regeln den Fluss des Programms ("Was passiert weshalb?")
+    \item Entscheidungen ("Schalter")
+    \begin{itemize}
+    \item {\tt{if \dots else/else if}}
+        {\tiny {\lstinputlisting{samples/IfSample.java}}}
+        \framebreak
+    \end{itemize}
+    \item Schleifen
+        \begin{itemize}
+    \item {\tt{for}}
+        {\tiny {\lstinputlisting{samples/ForSample.java}}}
+    \item {\tt{while}}
+        {\tiny {\lstinputlisting{samples/whileSample.java}}}
+    \end{itemize}
+\end{itemize}
+}
+\subsection{Boolsche Algebra}
+\frame[allowframebreaks]{\frametitle{Ein kleiner Ausflug in die Boolsche Algebra}
+\begin{itemize}
+    \item Aussagenlogische Ausdürcke
+    \item Genau zwei Werte: Wahr ({\tt true}), Falsch ({\tt false}) \pause
+    \item Logische Verknüpfungen:
+        \begin{itemize}
+            \item UND (in Java: {\tt{\&\&}})
+            \item ODER (in Java: {\tt{||}})
+        \end{itemize}\pause
+    \item Negation (Umkehr, in Java: {\tt !})\pause
+    \item Klammerung \pause
+    \item Assoziativität von {\tt \&\&} und {\tt ||}: Von links nach rechts
+\end{itemize}
+\framebreak
+Übung
+\begin{itemize}
+    \item {\tt true || false = \pause \textcolor{green}{ true}}\pause
+    \item {\tt true \&\& false = \pause \textcolor{red}{ false}}\pause
+    \item {\tt !true || false = \pause \textcolor{red}{ false}}\pause
+    \item {\tt true || false \&\& true = \pause \textcolor{green}{ true}}\pause
+    \item {\tt true || false \&\& true \&\& false = \pause \textcolor{red}{ false}}\pause
+    \item {\tt true || (false \&\& true \&\& false) = \pause \textcolor{green}{ true}}
+\end{itemize}
 }
 \section{Generics}
 \subsection{Beispiele}

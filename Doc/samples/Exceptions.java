@@ -3,7 +3,7 @@ public class Exceptions {
 		try {
 			test2("hallo");
 		} catch (Exception e) {
-			// Den Stacktrace (Liste der Caller bis zum Auftreten der Exception)
+			// Stacktrace (Liste der Caller bis zum Auftreten der Exception) ausgeben
 			e.printStackTrace();
 		}
 	}
