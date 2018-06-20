@@ -23,24 +23,6 @@
 %\end{lstlisting}
 \section{RESTaurant?}
 
-\subsection{JSON}
-\frame{\frametitle{JSON}
-	\begin{columns}
-		\begin{column}{0.727\textwidth}
-	\begin{itemize}
-		\item JSON := JavaScript Object Notation
-		\item Einfach lesbares Textformat
-		\item Array: \\ {\tt ["hallo1", "hallo2"]}
-		\item Object: \\ {\tt \{\\\hspace{1ex}	"EventType": "Workshop",\\\hspace{1ex}	"Teacher": "Janis Streib",\\\hspace{1ex} "Participants": 5\\\}}
-		\item In Java: org.json-Library\\\url{http://www.json.org/java/index.html}
-	\end{itemize}
-\end{column}
-\begin{column}{0.373\textwidth}
-	\pause
-	\includegraphics[width=40mm]{img/REST}
-\end{column}
-\end{columns}
-}
 \subsection{HTTP}
 \frame{\frametitle{HTTP}
 	\begin{itemize}
@@ -61,6 +43,20 @@
 		\item DELETE - Zum Löschen eines Datums
 	\end{itemize}
 }
+\frame[allowframebreaks]{\frametitle{HTTP-Requests in Java}
+    HTTP-GET (wdh.):
+     {\tiny{\lstinputlisting{samples/HTTPGet.java}}}
+     \framebreak
+     HTTP-POST:
+     {\tiny{\lstinputlisting{samples/HTTPPost.java}}}
+     \framebreak
+     HTTP-PUT:
+     {\tiny{\lstinputlisting{samples/HTTPPut.java}}}
+     \framebreak
+     HTTP-DELETE:
+     {\tiny{\lstinputlisting{samples/HTTPDelete.java}}}
+     
+}
 
 \frame{\frametitle{Antworten}
 	Webserver antworten mit einem Statuscode, der den Erfolg des Requests widerspiegelt. Z.B.: 
@@ -74,6 +70,24 @@
 	Viele weitere Statuscodes:\\ \url{https://de.wikipedia.org/wiki/HTTP-Statuscode\#Liste_der_HTTP-Statuscodes}
 }
 
+\subsection{JSON}
+\frame{\frametitle{JSON}
+	\begin{columns}
+		\begin{column}{0.727\textwidth}
+	\begin{itemize}
+		\item JSON := JavaScript Object Notation
+		\item Einfach lesbares Textformat
+		\item Array: \\ {\tt ["hallo1", "hallo2"]}
+		\item Object: \\ {\tt \{\\\hspace{1ex}	"EventType": "Workshop",\\\hspace{1ex}	"Teacher": "Janis Streib",\\\hspace{1ex} "Participants": 5\\\}}
+		\item In Java: org.json-Library\\\url{http://www.json.org/java/index.html}
+	\end{itemize}
+\end{column}
+\begin{column}{0.373\textwidth}
+	\pause
+	\includegraphics[width=40mm]{img/REST}
+\end{column}
+\end{columns}
+}
 \subsection{API?}
 \frame{\frametitle{Wie könnte eine geeignete Schnittstelle aussehen?}
 	%Anfordeurngen: Viele benutzer, korrektes, konsistentes verhalten, logisch strukturiert, vertsändlich
