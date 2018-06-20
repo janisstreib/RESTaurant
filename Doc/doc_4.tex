@@ -31,7 +31,7 @@
 	\pause
 	Beispiel eines HTTP-GET-Requestes an einen Webserver auf http://www.dogcraft.de/:
 	{\tiny \verbatiminput{samples/http.txt}}
-	Prameter könnnen als Key-Value-Paare übergeben werden in der Form:\\
+	Parameter können als Key-Value-Paare übergeben werden in der Form:\\
 	{\tt ?key2=value2\&key1=value1}
 }
 \frame{\frametitle{Request-Methoden}
@@ -96,7 +96,7 @@
 \subsection{REST}
 \frame{\frametitle{REST}
 	\begin{itemize}
-		\item Der RESTaurant-Server bietet zur Kommunikatoin mit der App ein REST-API über HTTP an
+		\item Der RESTaurant-Server bietet zur Kommunikation mit der App ein REST-API über HTTP an
 		\item API := Application Programming Interface
 		\item REST (oder ReST) := Representational State Transfer
 		\item "REST fordert, dass eine URI (Adresse) genau einen Seiteninhalt repräsentiert, und dass ein Web-/REST-Server auf mehrfache Anfragen mit demselben URI auch mit demselben Webseiteninhalt antwortet." - \url{https://de.wikipedia.org/wiki/Representational_State_Transfer}
@@ -107,7 +107,7 @@
 \frame{\frametitle{Die RESTaurant API}
 	\begin{itemize}
 		\item HTTP-Requests an einen Webserver
-		\item Server kooridniert Reservierungen
+		\item Server koordiniert Reservierungen
 		\item Antwortet mit dem HTTP-Statuscode {\tt 400} bei einem ungültigen, unmöglichen oder fehlerhaften Request
 		\item Antwortet mit dem HTTP-Statuscode {\tt 200} bei einem gültigen Request, sofern nicht anders spezifiziert.
 		\item Antwortet mit dem HTTP-Statuscode {\tt 404} bei nicht gefundener Reservierungsreferenz.
@@ -122,7 +122,7 @@
 }
 \frame{\frametitle{Table}
 	\begin{itemize}
-		\item Jeder Tisch hat eine ID, eine Plaztzanzahl und die Information, ob er sich am Fenster befindet
+		\item Jeder Tisch hat eine ID, eine Platzanzahl und die Information, ob er sich am Fenster befindet
 		\item Tables:\\ {\tt [\{"atWindow":false, "id":1, "seats":12\}, \{"atWindow":true, "id":2, "seats":2\}, \{"atWindow":true, "id":3, "seats":2\}, \{"atWindow":false, "id":4, "seats":4\}, \{"atWindow":true, "id":5, "seats":4\}, \{"atWindow":false, "id":6, "seats":4\}]
 			}
 	\end{itemize}
@@ -138,7 +138,7 @@
 		\hline
 		name=\{name\} & & Der Name, auf den die Reservierung gebucht werden soll \\
 		\hline
-		table=\{table id\} & & Der zu reserveriernede Tisch 
+		table=\{table id\} & & Der zu reservieriende Tisch 
 	\end{tabular}
 }
 \frame{\frametitle{Eine neue Reservierung anlegen - Statuscodes und Antowrt}

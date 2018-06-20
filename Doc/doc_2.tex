@@ -48,7 +48,7 @@
 		\item Kompiliert es? \pause
 		\item $\Rightarrow$ \textcolor{red}{Nein}\pause
 		\item Wie kann man es reparieren? \pause
-        \item Coder innerhalb von "Blöcken" wie Klassen ({\tt{class}}), Methoden oder Kontrollstrukturen muss mit {\tt{\{\dots\}}} "eingerahmt" werden
+        \item Code innerhalb von "Blöcken" wie Klassen ({\tt{class}}), Methoden oder Kontrollstrukturen muss mit {\tt{\{\dots\}}} "eingerahmt" werden
 		
 	\end{itemize}
 }
@@ -128,10 +128,10 @@
     \end{itemize}
 \end{itemize}
 }
-\subsection{Boolsche Algebra}
-\frame[allowframebreaks]{\frametitle{Ein kleiner Ausflug in die Boolsche Algebra}
+\subsection{Boolesche Algebra}
+\frame[allowframebreaks]{\frametitle{Ein kleiner Ausflug in die boolesche Algebra}
 \begin{itemize}
-    \item Aussagenlogische Ausdürcke
+    \item Aussagenlogische Ausdrücke
     \item Genau zwei Werte: Wahr ({\tt true}), Falsch ({\tt false}) \pause
     \item Logische Verknüpfungen:
         \begin{itemize}
@@ -159,7 +159,7 @@
 \begin{itemize}
 	\item Zur Erzeugung generischer Objekte
 	\item Beispiel: LinkedList$<\cdot>$, ArrayList$<\cdot>$, HashMap$<\cdot,\cdot>$, ...
-	\item Audrücke wie "{\tt ? extends Object}" möglich, um auszudrücken, dass das Objekt "mindestens" ein bestimmtes Objekt zu sein hat (in der Vererbungshierarchie)
+	\item Ausdrücke wie "{\tt ? extends Object}" möglich, um auszudrücken, dass das Objekt "mindestens" ein bestimmtes Objekt zu sein hat (in der Vererbungshierarchie)
 \end{itemize}	
 }
 \subsection{Implementierung/Benutzung}
@@ -262,7 +262,7 @@
 \frame{\frametitle{Analyse}
 	\begin{itemize}
 		\item Der Operator {\tt instance1 instanceof Object2} gibt genau dann {\tt true} zurück, "wenn {\tt instance1} eine Instanz von {\tt Objekt2}" ist.
-		\item Ein Objekt, das von einem anderen Objekt erbt, kann zu diesem "höheren" (bzw. konreteren) \emph{gecastet} werden.
+		\item Ein Objekt, das von einem anderen Objekt erbt, kann zu diesem "höheren" (bzw. konkreteren) \emph{gecastet} werden.
 		\item Beispiel: \tiny {\lstinputlisting{samples/CastSample.java}}
 		\item \normalsize {Im folgenden wird der Typ der Instanz durch einen Doppelpunkt gekennzeichnet (also {\tt instance:Object})}
 	\end{itemize}
@@ -288,7 +288,7 @@
 	\begin{itemize}
 		\item Was ist der Rückgabewert von {\tt dL:DieselLocomotive instanceof Cleanable}? \pause
 		\item {\tt \textcolor{green}{true}}
-		\item Wenn ein Objekt ein Interface implemetiert, ist es auch eine Art "Instanz" des Interfaces.
+		\item Wenn ein Objekt ein Interface implementiert, ist es auch eine Art "Instanz" des Interfaces.
 	\end{itemize}
 }
 \frame{\frametitle{Analyse}
@@ -302,7 +302,7 @@
 \subsection{Handling}
 \frame{\frametitle{Exceptions}
 	\begin{itemize}
-		\item Zur behandlung von Ausnahmefällen und Fehlern gibt es in Java \emph{Exceptions}
+		\item Zur Behandlung von Ausnahmefällen und Fehlern gibt es in Java \emph{Exceptions}
 		\item Exceptions sind Objekte des Typs \emph{Exception}, die \emph{Throwables} sind
 		\item Exceptions können in Methoden mittels des Codeworts {\tt throw} an die Aufrufenden der Methode (Caller) geworfen werden
 	\end{itemize}
@@ -324,7 +324,7 @@
 \frame{\frametitle{Streams}
 	\begin{itemize}
 		\item Streams sind in Java der Weg, um Eingaben entgegenzunehmen und Ausgaben zu tätigen (I/O) \pause
-		\item {\tt System.in} ist beispielweise ein {\tt InputStream}, der Konsoleneingaben vom Benutzer entgegen nimmt \pause
+		\item {\tt System.in} ist beispielsweise ein {\tt InputStream}, der Konsoleneingaben vom Benutzer entgegen nimmt \pause
 		\item {\tt System.out} ist ein {\tt OutputStream}, der Konsolenausgaben dem Benutzer präsentiert \pause
 		\item Ein {\tt FileInputStream} erlaubt das Lesen einer Datei \pause
 		\item $\Rightarrow$ nach diesem Muster gibt es viele andere Streams, die alle gleich benutzt werden können
@@ -343,8 +343,8 @@
 }
 \subsection{Eine Webseite "herunterladen"}
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
-	Bauen Sie ein kleines Programm, dass eine beliebige Webseite anfrägt und herunterlädt.\\
-	Benutzen sie dazu eine {\tt HttpURLConnection}, deren InputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die heruntergeladene HTML-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
+	Bauen Sie ein kleines Programm, dass eine beliebige Webseite anfragt und herunterlädt.\\
+	Benutzen sie dazu eine {\tt HttpURLConnection}, deren InputStream in eine Datei geschrieben wird.\\ Öffnen sie anschließend die heruntergeladene HTML-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
 }
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
 	\tiny{\lstinputlisting{samples/WebsiteDownloader.java}}
@@ -354,9 +354,9 @@
 	\footnotesize {
 		\begin{enumerate}
 			\item Autovervollständigung benutzen! \\
-			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschleunigt die Arbeit massiv und importiert dabei automatisch die benötigeten Pakete.
+			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschleunigt die Arbeit massiv und importiert dabei automatisch die benötigten Pakete.
 			\item IDEs wissen meistens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und anwenden.
-			\item Häufig speichern! \\ Bei einem möglichen Absturtz oder einer Unachtsamkeit sind Sie dann eher auf der sicheren Seite.
+			\item Häufig speichern! \\ Bei einem möglichen Absturz oder einer Unachtsamkeit sind Sie dann eher auf der sicheren Seite.
 			\item Häufig testen (iteratives Programmieren)! \\ Häufiges Testen/Ausführen Ihres Codes erhöht die Stabilität und Funktionalität und hilft außerdem dabei, schnell die Funktionalität Ihrer Algorithmen zu bestätigen oder frühzeitig korrigieren zu können.
 		\end{enumerate}
 	}
