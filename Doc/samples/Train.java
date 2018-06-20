@@ -2,11 +2,11 @@ import java.util.LinkedList;
 
 public abstract class Train implements Cleanable {
 	private Locomotive locomotive;
-	private LinkedList<? extends Bogie> bogies;
+	private LinkedList<? extends Car> cars;
 
-	public Train(Locomotive locomotive, LinkedList<? extends Bogie> bogies) {
+	public Train(Locomotive locomotive, LinkedList<? extends car> cars) {
 		this.locomotive = locomotive;
-		this.bogies = bogies;
+		this.car = cars;
 	}
 
 	public Locomotive getLocomotive() {
@@ -19,8 +19,8 @@ public abstract class Train implements Cleanable {
 
 	@Override
 	public void clean() {
-		for (Bogie bogie : bogies) {
-			bogie.clean();
+		for (Car car : cars) {
+			car.clean();
 		}
 		locomotive.clean();
 	}

@@ -28,12 +28,12 @@
 	\begin{itemize}
 		\item Variablen
 		\item Methoden
+		\item Kontrollstrukturen
+		\item Generics
 		\item Klassen
 		\item $\Rightarrow$ Objektorientierung, Vererbung
-		\item Kontrollstrukturen
-		\item I/O (Eingabe/Ausgabe)/ Streams
 		\item Exceptionhandling
-		\item Generics
+		\item I/O (Eingabe/Ausgabe)/ Streams
 	\end{itemize}
 }
 
@@ -107,7 +107,7 @@
 }
 \subsection{Implementierung/Benutzung}
 \frame{\frametitle{Beispiel}
-	Angenommen, man möchte eine LinkedList benutzen, um eine Menge von Kursteilnehmern zu speichern.
+	Angenommen, man möchte eine Menge von Kursteilnehmern speichern.
 	Dazu bietet sich eine LinkedList an. Damit man in "unsere" LinkedList nur Objekte vom Typ "Kursteilnehmer" stecken kann, ist die LinkedList ein Generic.
 	 \tiny {\lstinputlisting{samples/GenericSample.java}
 	 \lstinputlisting{samples/Participant.java}}
@@ -121,38 +121,38 @@
 \frame{\frametitle{Modellieren}		
 	Welche Objekte ($\Leftrightarrow$ Klassen) sind \emph{abstrakt}? \pause
 	\begin{itemize}
-		\item Zug \pause
-		\item Lokomotive \pause
-		\item Wagon \pause
+        \item Zug (Train)\pause
+        \item Lokomotive (Locomotive)\pause
+        \item Wagon (Railroad car)\pause
 		\begin{itemize}
-			\item Passagierwagen
-			\item Güterwagon
+            \item Passagierwagen (Passenger car)
+            \item Güterwagon (Freight car)
 		\end{itemize}
 	\end{itemize}
 }
 \frame{\frametitle{Modellieren}		
 	Welche Objekte ($\Leftrightarrow$ Klassen) sind \textcolor{green}{\emph{konkret}}? \pause
 	\begin{itemize}
-		\item Zug
+        \item Zug (Train)
 		\begin{itemize}
-			\item \textcolor{green}{Personenzug}
-			\item \textcolor{green}{Güterzug}
+            \item \textcolor{green}{Personenzug} (Passenger train)
+            \item \textcolor{green}{Güterzug} (Freight Train)
 		\end{itemize} \pause
-		\item Lokomotive
+		\item Lokomotive (Locomotive)
 		\begin{itemize}
-			\item \textcolor{green}{Dieseltriebwagen}
-			\item \textcolor{green}{Elektrischer Triebwagen}
+            \item \textcolor{green}{Dieseltriebwagen} (Diesel locomotive)
+            \item \textcolor{green}{Elektrischer Triebwagen} (Electric locomotive)
 		\end{itemize}
-		\item Wagon
+		\item Wagon (Railroad car)
 		\begin{itemize}
-			\item Passagierwagon  \pause
+			\item Passagierwagon (Passenger car)\pause
 			\begin{itemize}
-				\item \textcolor{green}{Speisewagon}
-				\item \textcolor{green}{Personenwagon}
+                \item \textcolor{green}{Speisewagon (Dining car)}
+                \item \textcolor{green}{Personenwagon (Coach)}
 			\end{itemize}
-			\item Güterwagon \pause
+			\item Güterwagon (Freight car)\pause
 			\begin{itemize}
-				\item \textcolor{green}{Containerwagon}
+                \item \textcolor{green}{Containerwagon (Container car)}
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
@@ -166,9 +166,9 @@
 }
 \frame{\frametitle{Implementieren!}
 	\tiny{ 
-		\lstinputlisting[caption=Bogie.java]{samples/Bogie.java}
-		\lstinputlisting[caption=CargoBogie.java]{samples/CargoBogie.java}
-		\lstinputlisting[caption=PassengerBogie.java]{samples/PassengerBogie.java}
+		\lstinputlisting[caption=RailroadCar.java]{samples/RailroadCar.java}
+		\lstinputlisting[caption=FreightCar.java]{samples/FreightCar.java}
+		\lstinputlisting[caption=PassengerCar.java]{samples/PassengerCar.java}
 	}
 }
 \frame{\frametitle{Implementieren!}
@@ -189,16 +189,16 @@
 
 \frame{\frametitle{Implementieren!}
 	\tiny{ 
-		\lstinputlisting[caption=CargoTrain.java]{samples/CargoTrain.java}
+		\lstinputlisting[caption=FreightTrain.java]{samples/FreightTrain.java}
 		\lstinputlisting[caption=PassengerTrain.java]{samples/PassengerTrain.java}
 	}
 }
 
 \frame{\frametitle{Implementieren!}
 	\tiny{ 
-		\lstinputlisting[caption=PersonBogie.java]{samples/PersonBogie.java}
-		\lstinputlisting[caption=DiningBogie.java]{samples/DiningBogie.java}
-		\lstinputlisting[caption=ContainerBogie.java]{samples/ContainerBogie.java}
+		\lstinputlisting[caption=Coach.java]{samples/Coach.java}
+		\lstinputlisting[caption=DiningCar.java]{samples/DiningCar.java}
+		\lstinputlisting[caption=ContainerCar.java]{samples/ContainerCar.java}
 	}
 }
 \subsection{Analyse}
@@ -236,9 +236,9 @@
 }
 \frame{\frametitle{Analyse}
 	\begin{itemize}
-		\item Was ist der Rückgabewert von {\tt pB:PassengerBogie instanceof DiningBogie}? \pause
+		\item Was ist der Rückgabewert von {\tt pB:PassengerCar instanceof DiningCar}? \pause
 		\item {\tt \textcolor{red}{nicht entscheidbar}}
-		\item Ein {\tt DiningBogie} ist ein {\tt PassengerBogie}, ein {\tt PassengerBogie} aber nicht zwangsläufig ein {\tt DiningBogie}
+		\item Ein {\tt DiningCar} ist ein {\tt PassengerCar}, ein {\tt PassengerCar} aber nicht zwangsläufig ein {\tt DiningCar}
 	\end{itemize}
 }
 \section{Exeptions}
@@ -287,20 +287,20 @@
 \subsection{Eine Webseite "herunterladen"}
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
 	Bauen Sie ein kleines Programm, dass eine beliebige Webseite anfrägt und herunterlädt.\\
-	Benutzen sie dazu eine {\tt HttpURLConnection}, deren InputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die html-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
+	Benutzen sie dazu eine {\tt HttpURLConnection}, deren InputStream in eine Datei geschrieben wird.\\ Öffen sie anschließend die heruntergeladene HTML-Datei zur Verifikation in einem Webbrowser.\\ Tipp:\\ {\tt HttpURLConnection connection = (HttpURLConnection) new URL("http://google.com").openConnection();\\...\\connection.getInputStream()...}
 }
 \frame{\frametitle{Beispiel: Eine Webseite "herunterladen"}
 	\tiny{\lstinputlisting{samples/WebsiteDownloader.java}}
 }
-\section{Nützliche Tipps}
-\frame{\frametitle{Einige nützliche Tips bei dem Umgang mit NetBeans}
+\section{Tipps}
+\frame{\frametitle{Einige nützliche Tipps für den Umgang mit NetBeans und Android Studio}
 	\footnotesize {
 		\begin{enumerate}
 			\item Autovervollständigung benutzen! \\
 			Benutzen Sie den Shortcut {\tt Strg + Space} wo Sie nur können. Es beschleunigt die Arbeit massiv und importiert dabei automatisch die benötigeten Pakete.
 			\item IDEs wissen meistens ganz gut, was falsch ist und wie sich ein Fehler beheben lässt.\\ Mit dem Shortcut {\tt Alt + Enter} können Sie sich Lösungsvorschläge anzeigen lassen und anwenden.
 			\item Häufig speichern! \\ Bei einem möglichen Absturtz oder einer Unachtsamkeit sind Sie dann eher auf der sicheren Seite.
-			\item Häufig testen (iteratives Programmieren)! \\ Häufiges Testen/Ausführen Ihres Codes erhöht die Stabilität und Funktionalität und hilft außerdem dabei, schnell die Funktionalität Ihrer Algorithmen zu bestätigen und frühzeitig korrigieren zu können.
+			\item Häufig testen (iteratives Programmieren)! \\ Häufiges Testen/Ausführen Ihres Codes erhöht die Stabilität und Funktionalität und hilft außerdem dabei, schnell die Funktionalität Ihrer Algorithmen zu bestätigen oder frühzeitig korrigieren zu können.
 		\end{enumerate}
 	}
 }

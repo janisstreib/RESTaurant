@@ -1,2 +1,2 @@
-Bogie bog = new DiningBogie();
-DiningBogie dBog = (DiningBogie) bog;
+RailroadCar car = new DiningCar();
+DiningCar dCar = (DiningCar) car;

@@ -100,6 +100,14 @@
 \frame{\frametitle{Einen TextView ändern}
 	\tiny {\lstinputlisting{samples/MainActivity.java}}
 }
+\section{AVDs}
+	\frame{\frametitle{AVDs}		
+		\begin{itemize}
+			\item Das Android-SDK stellt die Möglichkeit eines Android-Emulators zur Verfügung
+			\item Ermöglicht die Ausführung beliebiger Android-Versionen und Formfaktoren ohne echtes Smartphone/Tablet/Watch/...
+			\item AVD := Android Virtual Device
+		\end{itemize}
+	}
 \section{Zinsrechner}
 \frame{\frametitle{Mini-Projekt: Zinsrechner}
 	Designen und programmieren Sie einen kleinen Zinsrechner, bei dem der Benutzer ein Startkapital und einen Zinssatz angeben kann und sein Endkapital zurückgeliefert bekommt.
@@ -110,21 +118,13 @@
 	\pause Musterlösung:\\ \url{https://github.com/janisstreib/RESTaurant/tree/master/Zinsrechner}
 }
 
-\section{AVDs}
-	\frame{\frametitle{AVDs}		
-		\begin{itemize}
-			\item Das Android-SDK stellt die Möglichkeit eines Android-Emulators zur Verfügung
-			\item Ermöglicht die Ausführung beliebiger Android-Versionen und Formfaktoren ohne echtes Smartphone/Tablet/Watch/...
-			\item AVD := Android Virtual Device
-		\end{itemize}
-	}
 \section{Zustandshaltung}
 \frame{\frametitle{Zustandshaltung}
 	\begin{itemize}
 		\item Experiment mit dem Zinsrechner: Display drehen (in einem AVD: {\tt Strg + F11} / {\tt Strg + F12}) \pause
 		\item Grund: Bei jedem komplett neuen Zeichnen des UIs wird {\tt onCreate()} neu aufgerufen und die Activity neu instanziiert \pause
 		\item Lösung: {\tt onSaveInstanceState()} und {\tt onRestoreInstanceState()} sowie der Parameter {\tt savedInstanceState} in {\tt onCreate()}
-		\item Variablen und Zustände werden in einem {\tt Bundles} bei {\tt onRestoreInstanceState()} gespeichert und vom Android-System entgegengenommen. Wenn die Activity vom System wieder geweckt wird, wird dieses Bundle der Activity wieder zurückgeführt.
+		\item Variablen und Zustände werden in einem {\tt Bundle} bei {\tt onRestoreInstanceState()} gespeichert und vom Android-System entgegengenommen. Wenn die Activity vom System wieder geweckt wird, wird dieses Bundle der Activity wieder zurückgeführt.
 		\item $\Rightarrow$ Android-System kann auch aus anderen Gründen die Activity "killen"
 	\end{itemize}
 }

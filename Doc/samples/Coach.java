@@ -1,4 +1,4 @@
-public class PersonBogie extends PassengerBogie {
+public class Coach extends PassengerCar {
 	@Override
 	public void clean() {
 		// Sauber machen
