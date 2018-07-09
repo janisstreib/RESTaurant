@@ -13,10 +13,10 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.zinsrechner.MainActivity" >
 
-        <TextView
+        <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@+id/kapital"
+            android:labelFor="@+id/list"
             android:text="Kapital" />
 
         <EditText
