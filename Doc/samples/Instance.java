@@ -4,24 +4,23 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-	private static final String TEXT_INPUT_STATE = "textInput1";
-	private EditText input;
+	private static final String VAR_STATE = "tolleVariable";
+	private int tolleVariable = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		input = (EditText) findViewById(R.id.editText1);
 	}
 	// Speicherung in Key-Value-Paaren
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		outState.putString(TEXT_INPUT_STATE, input.getText().toString());
+		outState.putInt(VAR_STATE, tolleVariable);
 		super.onSaveInstanceState(outState);
 	}
 
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		input.setText(savedInstanceState.getString(TEXT_INPUT_STATE));
+		tolleVariable = savedInstanceState.getInt(VAR_STATE);
 		super.onRestoreInstanceState(savedInstanceState);
 	}
 }
