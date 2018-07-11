@@ -30,12 +30,12 @@ public class Booking {
 
 	}
 
-	public Booking(Restaurant restaurant, String name, Date begin, Table table)
+	public Booking(Restaurant restaurant, String name, Date begin, Date end, Table table)
 			throws SQLException {
 		this.name = name;
 		this.begin = begin;
 		this.table = table;
-		Date end = new Date(begin.getTime() + 1000 * 60 * 60 * 3);
+		//Date end = new Date(begin.getTime() + 1000 * 60 * 60 * 3);
 		this.end = end;
 		SecureRandom r = new SecureRandom();
 		this.id = Math.abs(r.nextLong());
@@ -100,6 +100,7 @@ public class Booking {
 		map.put("begin", begin.getTime());
 		map.put("end", end.getTime());
 		map.put("table", table.toJSON());
+		map.put("restaurant", restaurant.toJSON());
 		return new JSONObject(map);
 	}
 
