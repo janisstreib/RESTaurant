@@ -3,7 +3,7 @@ HttpURLConnection connection = (HttpURLConnection) new URL(
 BufferedReader read = new BufferedReader(new InputStreamReader(
             connection.getInputStream()));
 // Get reponse code
-int responseCode = connection.getResponceCode();
+int responseCode = connection.getResponseCode();
 // Put some code here...
 read.close();
 

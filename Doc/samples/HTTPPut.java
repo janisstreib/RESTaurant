@@ -10,7 +10,7 @@ out.close();
 BufferedReader read = new BufferedReader(new InputStreamReader(
             connection.getInputStream()));
 // Get reponse code
-int responseCode = connection.getResponceCode();
+int responseCode = connection.getResponseCode();
 // Read Response...
 read.close();
 
